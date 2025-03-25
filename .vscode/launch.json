@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-SimpleApiRestfulSpringbootApplication<simple-api-restful-springboot>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "br.com.egotting.simple_api_restful_springboot.SimpleApiRestfulSpringbootApplication",
+            "projectName": "simple-api-restful-springboot",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
