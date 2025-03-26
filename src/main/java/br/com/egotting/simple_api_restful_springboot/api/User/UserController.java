@@ -1,32 +1,39 @@
-package br.com.egotting.simple_api_restful_springboot.api;
+package br.com.egotting.simple_api_restful_springboot.api.User;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fasterxml.jackson.databind.deser.impl.CreatorCandidate.Param;
-
 import br.com.egotting.simple_api_restful_springboot.domain.Entity.User;
 import br.com.egotting.simple_api_restful_springboot.domain.Services.UserServices;
 
+import java.util.Optional;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
 
+
+@Validated
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/v1/api")
 public class UserController {
 
     private final UserServices userServices;
+
+    // private static final Logger logger =
+    // LoggerFactory.getLogger(AuthController.class)
 
     public UserController(UserServices userServices) {
         this.userServices = userServices;
     }
 
-    @PostMapping("/add-user")
+    @PostMapping("/create/user")
     public ResponseEntity<User> CreateUser(
             @RequestBody User user) {
 
@@ -34,26 +41,25 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.CREATED).body(_user);
     }
 
-    @GetMapping("/get-users")
+    @GetMapping("/get/users")
     public ResponseEntity<Iterable<User>> GetAllUsers() {
         return ResponseEntity.status(HttpStatus.OK).body(userServices.FindAll());
     }
 
-    @GetMapping("/get-user/{email}")
-    public ResponseEntity<User> GetUniqueUser(@PathVariable @RequestBody String email) {
-
-        if (!Param.class.isInstance(email)) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
-        }
-
+    @GetMapping("/get/user/{email}")
+    public ResponseEntity<Optional<User>> GetUniqueUser(@PathVariable String email) {
         return ResponseEntity.status(HttpStatus.OK).body(userServices.findEmail(email));
     }
 
-    @DeleteMapping("/delete-user/{email}")
+    @PutMapping("/update/user/{email}")
+    public ResponseEntity<User> updateUser(@PathVariable String email, @RequestBody User user) {
+        userServices.UpdateUser(email, user);
+        return ResponseEntity.status(HttpStatus.OK).body(user);
+    }
+
+    @DeleteMapping("/delete/user/{email}")
     ResponseEntity<Void> DeleteUser(@PathVariable @RequestBody String email) {
-        if (!Param.class.isInstance(email)) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
-        }
+
         userServices.deleteByEmail(email);
         return ResponseEntity.status(HttpStatus.OK).body(null);
     }

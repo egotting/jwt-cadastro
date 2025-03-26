@@ -11,5 +11,8 @@
       "username": "ego"
     }
   ],
-  "java.configuration.updateBuildConfiguration": "interactive"
+  "java.configuration.updateBuildConfiguration": "interactive",
+  "files.autoSave": "onWindowChange",
+  "editor.fontFamily": "'IosevkaTerm Nerd Font',Consolas, 'Courier New', monospace",
+  "editor.cursorStyle": "block"
 }
