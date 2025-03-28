@@ -11,8 +11,16 @@
       "username": "ego"
     }
   ],
-  "java.configuration.updateBuildConfiguration": "interactive",
-  "files.autoSave": "onWindowChange",
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "files.autoSave": "onFocusChange",
   "editor.fontFamily": "'IosevkaTerm Nerd Font',Consolas, 'Courier New', monospace",
-  "editor.cursorStyle": "block"
+  "editor.cursorStyle": "line",
+  "animations.Active": "Scale",
+  "animations.CursorAnimation": false,
+  "animations.Default-Duration": 50,
+  "animations.Scrolling": "None",
+  "animations.CursorAnimationOptions": {
+    "TrailLength": 2
+  },
+  "editor.formatOnSave": true
 }

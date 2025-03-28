@@ -14,18 +14,26 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>simple-api-restful-springboot</name>
 	<description>Demo project for Spring Boot</description>
-	<url />
+	<url>https://github.com/egotting/simple-api-restful-springboot</url>
 	<licenses>
-		<license />
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
+			<distribution>repo</distribution>
+		</license>
 	</licenses>
 	<developers>
-		<developer />
+		<developer>
+			<id>egotting</id>
+			<name>Egotting</name>
+			<email>egotting@example.com</email>
+		</developer>
 	</developers>
 	<scm>
-		<connection />
-		<developerConnection />
-		<tag />
-		<url />
+		<connection>scm:git:git://github.com/egotting/simple-api-restful-springboot.git</connection>
+		<developerConnection>scm:git:ssh://github.com/egotting/simple-api-restful-springboot.git</developerConnection>
+		<tag>HEAD</tag>
+		<url>https://github.com/egotting/simple-api-restful-springboot</url>
 	</scm>
 	<properties>
 		<java.version>21</java.version>
@@ -61,11 +69,6 @@
 			<artifactId>spring-boot-starter-jdbc</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
@@ -85,15 +88,24 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+		<build>
+			<plugins>
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+				</plugin>
+			</plugins>
+		</build>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
+		</dependency>
 	</dependencies>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
-
 </project>

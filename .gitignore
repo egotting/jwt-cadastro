@@ -412,8 +412,8 @@ ASALocalRun/
 healthchecksdb
 
 # DB FOLDER
-resources/*
-
+resources/
+.properties
 # Backup folder for Package Reference Convert tool in Visual Studio 2017
 MigrationBackup/
 
@@ -465,3 +465,5 @@ $RECYCLE.BIN/
 
 # Custom rules (everything added below won't be overriden by 'Generate .gitignore File' if you use 'Update' option)
 
+debug.log
+debug.log

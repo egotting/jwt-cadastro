@@ -1,4 +1,4 @@
-package br.com.egotting.simple_api_restful_springboot.domain.Repositories;
+package br.com.egotting.simple_api_restful_springboot.domain.Repositories.User;
 
 import java.util.Optional;
 
@@ -8,9 +8,10 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Repository;
 
-import br.com.egotting.simple_api_restful_springboot.domain.Entity.User;
+import br.com.egotting.simple_api_restful_springboot.domain.Entity.User.User;
 import jakarta.transaction.Transactional;
 
 @Repository
@@ -24,4 +25,6 @@ public interface UserRepository extends CrudRepository<User, Long> {
     @Transactional
     @Query("DELETE FROM User WHERE email = ?1")
     void deleteByEmail(String email);
+
+    UserDetails findByLogin(String email);
 }

@@ -3,8 +3,8 @@ package br.com.egotting.simple_api_restful_springboot.api.User;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.egotting.simple_api_restful_springboot.domain.Entity.User;
-import br.com.egotting.simple_api_restful_springboot.domain.Services.UserServices;
+import br.com.egotting.simple_api_restful_springboot.domain.Entity.User.User;
+import br.com.egotting.simple_api_restful_springboot.domain.Services.User.UserServices;
 
 import java.util.Optional;
 
@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
-
 
 @Validated
 @RestController

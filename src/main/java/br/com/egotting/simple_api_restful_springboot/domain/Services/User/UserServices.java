@@ -1,4 +1,4 @@
-package br.com.egotting.simple_api_restful_springboot.domain.Services;
+package br.com.egotting.simple_api_restful_springboot.domain.Services.User;
 
 import java.util.Optional;
 
@@ -6,8 +6,8 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 import br.com.egotting.simple_api_restful_springboot.Exceptions.NotFoundUserByEmail;
-import br.com.egotting.simple_api_restful_springboot.domain.Entity.User;
-import br.com.egotting.simple_api_restful_springboot.domain.Repositories.UserRepository;
+import br.com.egotting.simple_api_restful_springboot.domain.Entity.User.User;
+import br.com.egotting.simple_api_restful_springboot.domain.Repositories.User.UserRepository;
 
 @Service
 public class UserServices {
@@ -33,9 +33,9 @@ public class UserServices {
         return userRepository.findByEmail(email);
     }
 
-    public void UpdateUser( String email,User user) {
+    public void UpdateUser(String email, User user) {
         Optional<User> _user = userRepository.findByEmail(email);
-        if(!email.equals(_user.get().getEmail())){
+        if (!email.equals(_user.get().getEmail())) {
             throw new NotFoundUserByEmail("Not Found User by Email: " + email);
         }
         _user.get().setEmail(user.getEmail());
@@ -45,4 +45,5 @@ public class UserServices {
     public void deleteByEmail(String email) {
         userRepository.deleteByEmail(email);
     }
+
 }
