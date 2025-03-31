@@ -3,9 +3,6 @@ package br.com.egotting.simple_api_restful_springboot.domain.Services.User;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -16,7 +13,6 @@ import br.com.egotting.simple_api_restful_springboot.domain.Entity.Auth.Dto.Auth
 import br.com.egotting.simple_api_restful_springboot.domain.Entity.GeneralDTOs.GeneralRequestDTO;
 import br.com.egotting.simple_api_restful_springboot.domain.Entity.User.User;
 import br.com.egotting.simple_api_restful_springboot.domain.Entity.User.Dto.UserRequestDTO;
-import br.com.egotting.simple_api_restful_springboot.domain.Entity.User.Dto.UserResponseDTO;
 import br.com.egotting.simple_api_restful_springboot.domain.Repositories.User.UserRepository;
 
 @Service
@@ -28,7 +24,7 @@ public class UserServices {
     @Autowired
     private AuthenticationManager manager;
 
-    public void saveDto(UserRequestDTO user) {
+    public void saveUserDto(UserRequestDTO user) {
         var nUser = new User(user.getEmail(), user.getPassword(), user.getRole());
 
         userRepository.save(nUser);
@@ -59,11 +55,11 @@ public class UserServices {
     }
 
     public void Cadastro(AuthRequestDTO user) {
-        if (userRepository.findByLogin(user.email()) != null) {
+        if (userRepository.findByEmail(user.email()) != null) {
             throw new NotFoundUserByEmail("Not Found User by Email" + user.email());
         }
         String encryptionPassword = new BCryptPasswordEncoder().encode(user.password());
-        User nUser = new User(user.email(), encryptionPassword, user.role());
+        User nUser = new User(user.email(), encryptionPassword, user.roles());
         userRepository.save(nUser);
     }
 
