@@ -18,8 +18,11 @@ import jakarta.transaction.Transactional;
 @EnableJpaRepositories("br.com.egotting.simple_api_restful_springboot.config.JpaConfig")
 @EntityScan(basePackages = "br.com.egotting.simple_api_restful_springboot.config.JpaConfig")
 public interface UserRepository extends CrudRepository<User, Long> {
+
+    <T> void saveDto(T user);
+
     @Query("SELECT u FROM User u WHERE u.email = ?1")
-    Optional<User> findByEmail(@Param("email") String email);
+    <T> Optional<T> findByItem(@Param("email") String item);
 
     @Modifying()
     @Transactional
@@ -27,4 +30,9 @@ public interface UserRepository extends CrudRepository<User, Long> {
     void deleteByEmail(String email);
 
     UserDetails findByLogin(String email);
+
+    <T> void Cadastro(T user);
+
+    <T> void Login(T user);
+
 }

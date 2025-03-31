@@ -4,6 +4,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.egotting.simple_api_restful_springboot.domain.Entity.User.User;
+import br.com.egotting.simple_api_restful_springboot.domain.Entity.User.Dto.UserRequestDTO;
+import br.com.egotting.simple_api_restful_springboot.domain.Entity.User.Dto.UserResponseDTO;
 import br.com.egotting.simple_api_restful_springboot.domain.Services.User.UserServices;
 
 import java.util.Optional;
@@ -33,11 +35,11 @@ public class UserController {
     }
 
     @PostMapping("/create/user")
-    public ResponseEntity<User> CreateUser(
-            @RequestBody User user) {
+    public ResponseEntity<Void> CreateUser(
+            @RequestBody UserRequestDTO user) {
 
-        var _user = userServices.create(user);
-        return ResponseEntity.status(HttpStatus.CREATED).body(_user);
+        userServices.saveDto(user);
+        return ResponseEntity.status(HttpStatus.CREATED).body(null);
     }
 
     @GetMapping("/get/users")

@@ -2,39 +2,51 @@ package br.com.egotting.simple_api_restful_springboot.domain.Services.User;
 
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import br.com.egotting.simple_api_restful_springboot.Exceptions.NotFoundUserByEmail;
+import br.com.egotting.simple_api_restful_springboot.domain.Entity.Auth.Dto.AuthRequestDTO;
+import br.com.egotting.simple_api_restful_springboot.domain.Entity.GeneralDTOs.GeneralRequestDTO;
 import br.com.egotting.simple_api_restful_springboot.domain.Entity.User.User;
+import br.com.egotting.simple_api_restful_springboot.domain.Entity.User.Dto.UserRequestDTO;
+import br.com.egotting.simple_api_restful_springboot.domain.Entity.User.Dto.UserResponseDTO;
 import br.com.egotting.simple_api_restful_springboot.domain.Repositories.User.UserRepository;
 
 @Service
 public class UserServices {
 
-    private final UserRepository userRepository;
+    @Autowired
+    private UserRepository userRepository;
 
-    public UserServices(@Lazy UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
+    @Autowired
+    private AuthenticationManager manager;
 
-    public User create(User user) {
-        return userRepository.save(user);
+    public void saveDto(UserRequestDTO user) {
+        var nUser = new User(user.getEmail(), user.getPassword(), user.getRole());
+
+        userRepository.save(nUser);
     }
 
     public Iterable<User> FindAll() {
         return userRepository.findAll();
     }
 
-    public Optional<User> findEmail(String email) {
-        if (userRepository.findByEmail(email) != null) {
-            throw new NotFoundUserByEmail("Not Found User by Email: " + email);
+    public Optional<User> findEmail(String item) {
+        if (userRepository.findByItem(item) != null) {
+            throw new NotFoundUserByEmail("Not Found User by Email: " + item);
         }
-        return userRepository.findByEmail(email);
+        return userRepository.findByItem(item);
     }
 
     public void UpdateUser(String email, User user) {
-        Optional<User> _user = userRepository.findByEmail(email);
+        Optional<User> _user = userRepository.findByItem(email);
         if (!email.equals(_user.get().getEmail())) {
             throw new NotFoundUserByEmail("Not Found User by Email: " + email);
         }
@@ -46,4 +58,17 @@ public class UserServices {
         userRepository.deleteByEmail(email);
     }
 
+    public void Cadastro(AuthRequestDTO user) {
+        if (userRepository.findByLogin(user.email()) != null) {
+            throw new NotFoundUserByEmail("Not Found User by Email" + user.email());
+        }
+        String encryptionPassword = new BCryptPasswordEncoder().encode(user.password());
+        User nUser = new User(user.email(), encryptionPassword, user.role());
+        userRepository.save(nUser);
+    }
+
+    public void Login(GeneralRequestDTO data) {
+        var userPass = new UsernamePasswordAuthenticationToken(data.email(), data.password());
+        this.manager.authenticate(userPass);
+    }
 }
