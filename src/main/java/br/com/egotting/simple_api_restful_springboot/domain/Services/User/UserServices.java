@@ -3,21 +3,19 @@ package br.com.egotting.simple_api_restful_springboot.domain.Services.User;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import br.com.egotting.simple_api_restful_springboot.Exceptions.NotFoundUserByEmail;
+import br.com.egotting.simple_api_restful_springboot.Exceptions.NullEmail;
 import br.com.egotting.simple_api_restful_springboot.domain.Entity.Auth.Dto.AuthRequestDTO;
 import br.com.egotting.simple_api_restful_springboot.domain.Entity.GeneralDTOs.GeneralRequestDTO;
 import br.com.egotting.simple_api_restful_springboot.domain.Entity.User.User;
 import br.com.egotting.simple_api_restful_springboot.domain.Entity.User.Dto.UserRequestDTO;
-import br.com.egotting.simple_api_restful_springboot.domain.Entity.User.Dto.UserResponseDTO;
 import br.com.egotting.simple_api_restful_springboot.domain.Repositories.User.UserRepository;
+import br.com.egotting.simple_api_restful_springboot.domain.Services.Security.Token.TokenService;
 
 @Service
 public class UserServices {
@@ -28,7 +26,10 @@ public class UserServices {
     @Autowired
     private AuthenticationManager manager;
 
-    public void saveDto(UserRequestDTO user) {
+    @Autowired
+    private TokenService tokenService;
+
+    public void saveUserDto(UserRequestDTO user) {
         var nUser = new User(user.getEmail(), user.getPassword(), user.getRole());
 
         userRepository.save(nUser);
@@ -58,17 +59,22 @@ public class UserServices {
         userRepository.deleteByEmail(email);
     }
 
-    public void Cadastro(AuthRequestDTO user) {
-        if (userRepository.findByLogin(user.email()) != null) {
-            throw new NotFoundUserByEmail("Not Found User by Email" + user.email());
+    public void Cadastro(AuthRequestDTO data) {
+        if (data.email() == null) {
+            throw new NullEmail("Email não pode ser nulo");
         }
-        String encryptionPassword = new BCryptPasswordEncoder().encode(user.password());
-        User nUser = new User(user.email(), encryptionPassword, user.role());
+        String encryptionPassword = new BCryptPasswordEncoder().encode(data.password());
+        User nUser = new User(data.email(), encryptionPassword, data.roles());
         userRepository.save(nUser);
     }
 
     public void Login(GeneralRequestDTO data) {
+        if (userRepository.findByEmail(data.email()) == null) {
+            throw new NotFoundUserByEmail("Not Found User by Email:  " + data.email());
+        }
         var userPass = new UsernamePasswordAuthenticationToken(data.email(), data.password());
-        this.manager.authenticate(userPass);
+        var auth = this.manager.authenticate(userPass);
+
+        tokenService.generateToken((User) auth.getPrincipal());
     }
 }

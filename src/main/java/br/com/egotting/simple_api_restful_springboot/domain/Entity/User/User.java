@@ -14,11 +14,15 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "user_tb")
-@Data
+@Getter
+@Setter
+@EqualsAndHashCode
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,6 +32,10 @@ public class User implements UserDetails {
     private Roles roles;
     private LocalDateTime createdAccount = LocalDateTime.now();
 
+    public User() {
+
+    }
+
     public User(String email, String password, Roles roles) {
         this.email = email;
         this.password = password;
@@ -36,7 +44,7 @@ public class User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        if (this.roles == Roles.ADM)
+        if (this.roles == Roles.ADMIN)
             return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_USER"));
         else
             return List.of(new SimpleGrantedAuthority("ROLE_USER"));

@@ -7,6 +7,5 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SimpleApiRestfulSpringbootApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SimpleApiRestfulSpringbootApplication.class, args);
-
 	}
 }
