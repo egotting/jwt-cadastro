@@ -2,6 +2,12 @@
     "configurations": [
         {
             "type": "java",
+            "name": "SimpleApiRestfulSpringbootApplication",
+            "request": "launch",
+            "mainClass": "br.com.egotting.simple_api_restful_springboot.SimpleApiRestfulSpringbootApplication"
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-SimpleApiRestfulSpringbootApplication<simple-api-restful-springboot>",
             "request": "launch",
             "cwd": "${workspaceFolder}",

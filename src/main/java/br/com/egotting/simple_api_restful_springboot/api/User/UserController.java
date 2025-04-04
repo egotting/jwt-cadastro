@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.egotting.simple_api_restful_springboot.domain.Entity.User.User;
 import br.com.egotting.simple_api_restful_springboot.domain.Entity.User.Dto.UserRequestDTO;
-import br.com.egotting.simple_api_restful_springboot.domain.Entity.User.Dto.UserResponseDTO;
 import br.com.egotting.simple_api_restful_springboot.domain.Services.User.UserServices;
 
 import java.util.Optional;

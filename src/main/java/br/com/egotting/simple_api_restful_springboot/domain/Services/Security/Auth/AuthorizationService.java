@@ -1,4 +1,4 @@
-package br.com.egotting.simple_api_restful_springboot.domain.Services.Auth;
+package br.com.egotting.simple_api_restful_springboot.domain.Services.Security.Auth;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
