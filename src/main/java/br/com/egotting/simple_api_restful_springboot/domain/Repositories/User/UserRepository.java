@@ -13,9 +13,6 @@ import br.com.egotting.simple_api_restful_springboot.domain.Entity.User.User;
 import jakarta.transaction.Transactional;
 
 @Repository
-// @EnableJpaRepositories("br.com.egotting.simple_api_restful_springboot.config.JpaConfig")
-// @EntityScan(basePackages =
-// "br.com.egotting.simple_api_restful_springboot.config.JpaConfig")
 public interface UserRepository extends CrudRepository<User, Long> {
 
     @Query("SELECT u FROM User u WHERE u.email = ?1")

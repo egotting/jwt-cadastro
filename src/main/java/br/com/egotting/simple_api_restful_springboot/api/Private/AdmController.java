@@ -5,13 +5,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import org.springframework.web.bind.annotation.GetMapping;
 
-
 @RestController
 @RequestMapping("/v1/api/private")
 public class AdmController {
-
-
-
     @GetMapping("/test")
     public String getMethodName() {
         return "TEST ROTA PRIVADA";

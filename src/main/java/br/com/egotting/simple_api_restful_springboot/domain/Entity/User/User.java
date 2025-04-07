@@ -33,7 +33,6 @@ public class User implements UserDetails {
     private LocalDateTime createdAccount = LocalDateTime.now();
 
     public User() {
-
     }
 
     public User(String email, String password, Roles roles) {

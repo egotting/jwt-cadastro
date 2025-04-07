@@ -13,8 +13,8 @@
   ],
   "java.configuration.updateBuildConfiguration": "automatic",
   "files.autoSave": "onFocusChange",
-  "editor.fontFamily": "'IosevkaTerm Nerd Font',Consolas, 'Courier New', monospace",
-  "editor.cursorStyle": "line",
+  "editor.fontFamily": "HackNerdFont,'IosevkaTerm Nerd Font',Consolas, 'Courier New', monospace",
+  "editor.cursorStyle": "block",
   "animations.Active": "Scale",
   "animations.CursorAnimation": false,
   "animations.Default-Duration": 50,
@@ -22,5 +22,8 @@
   "animations.CursorAnimationOptions": {
     "TrailLength": 2
   },
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "editor.renderLineHighlight": "line",
+  "editor.renderWhitespace": "boundary",
+  "editor.mouseWheelZoom": true
 }
