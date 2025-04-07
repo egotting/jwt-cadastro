@@ -26,9 +26,6 @@ public class UserController {
 
     private final UserServices userServices;
 
-    // private static final Logger logger =
-    // LoggerFactory.getLogger(AuthController.class)
-
     public UserController(UserServices userServices) {
         this.userServices = userServices;
     }

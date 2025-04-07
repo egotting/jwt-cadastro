@@ -70,7 +70,7 @@ public class UserServices {
 
     public void Login(GeneralRequestDTO data) {
         if (userRepository.findByEmail(data.email()) == null) {
-            throw new NotFoundUserByEmail("Not Found User by Email:  " + data.email());
+            throw new NullEmail("Not Found User by Email:  " + data.email());
         }
         var userPass = new UsernamePasswordAuthenticationToken(data.email(), data.password());
         var auth = this.manager.authenticate(userPass);
