@@ -30,7 +30,7 @@ public class UserServices {
     private TokenService tokenService;
 
     public void saveUserDto(UserRequestDTO user) {
-        var nUser = new User(user.getEmail(), user.getPassword(), user.getRole());
+        var nUser = new User(user.email(), user.password(), user.role());
 
         userRepository.save(nUser);
     }
@@ -70,7 +70,7 @@ public class UserServices {
 
     public void Login(GeneralRequestDTO data) {
         if (userRepository.findByEmail(data.email()) == null) {
-            throw new NullEmail("Not Found User by Email:  " + data.email());
+            throw new NullEmail("Este email não foi encontrado:  " + data.email());
         }
         var userPass = new UsernamePasswordAuthenticationToken(data.email(), data.password());
         var auth = this.manager.authenticate(userPass);

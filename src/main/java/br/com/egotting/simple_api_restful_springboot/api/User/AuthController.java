@@ -23,12 +23,18 @@ public class AuthController {
 
     @PostMapping("/user/login")
     public ResponseEntity<String> login(@RequestBody @Validated GeneralRequestDTO data) {
+        if (data.password() == null || data.email() == null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Email ou senha incorreto");
+        }
         services.Login(data);
         return ResponseEntity.status(HttpStatus.OK).body("Login realizado com sucesso");
     }
 
     @PostMapping("/user/register")
     public ResponseEntity<String> register(@RequestBody @Validated AuthRequestDTO data) {
+        if (data.password() == null || data.email() == null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Email ou senha não podem ser nulos");
+        }
         services.Cadastro(data);
         return ResponseEntity.status(HttpStatus.OK).body("Cadastro realizado com sucesso");
     }

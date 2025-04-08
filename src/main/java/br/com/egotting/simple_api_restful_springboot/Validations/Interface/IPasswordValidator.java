@@ -5,10 +5,9 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import com.auth0.jwt.interfaces.Payload;
-
 import br.com.egotting.simple_api_restful_springboot.Validations.PasswordValidator;
 import jakarta.validation.Constraint;
+import jakarta.validation.Payload;
 
 @Target({ ElementType.FIELD, ElementType.PARAMETER })
 @Retention(RetentionPolicy.RUNTIME)
