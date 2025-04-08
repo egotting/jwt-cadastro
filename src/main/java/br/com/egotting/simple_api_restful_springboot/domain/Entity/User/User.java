@@ -8,12 +8,16 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import br.com.egotting.simple_api_restful_springboot.Validations.Interface.IPasswordValidator;
 import br.com.egotting.simple_api_restful_springboot.domain.Enums.Roles;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Size;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -23,11 +27,15 @@ import lombok.Setter;
 @Getter
 @Setter
 @EqualsAndHashCode
+@Valid
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Email
     private String email;
+    @Size(min = 8)
+    @IPasswordValidator
     private String password;
     private Roles roles;
     private LocalDateTime createdAccount = LocalDateTime.now();
