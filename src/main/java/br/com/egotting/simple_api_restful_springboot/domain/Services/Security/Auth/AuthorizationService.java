@@ -6,13 +6,13 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import br.com.egotting.simple_api_restful_springboot.domain.Repositories.User.UserRepository;
+import br.com.egotting.simple_api_restful_springboot.domain.Repositories.User.IUserRepository;
 
 @Service
 public class AuthorizationService implements UserDetailsService {
 
     @Autowired
-    UserRepository userRepository;
+    IUserRepository userRepository;
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {

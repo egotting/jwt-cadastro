@@ -25,5 +25,6 @@
   "editor.formatOnSave": true,
   "editor.renderLineHighlight": "line",
   "editor.renderWhitespace": "boundary",
-  "editor.mouseWheelZoom": true
+  "editor.mouseWheelZoom": true,
+  "postman.settings.dotenv-detection-notification-visibility": false
 }

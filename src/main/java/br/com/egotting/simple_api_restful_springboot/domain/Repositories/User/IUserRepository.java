@@ -1,5 +1,6 @@
 package br.com.egotting.simple_api_restful_springboot.domain.Repositories.User;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.Modifying;
@@ -13,15 +14,17 @@ import br.com.egotting.simple_api_restful_springboot.domain.Entity.User.User;
 import jakarta.transaction.Transactional;
 
 @Repository
-public interface UserRepository extends CrudRepository<User, Long> {
+public interface IUserRepository extends CrudRepository<User, Long> {
 
     @Query("SELECT u FROM User u WHERE u.email = ?1")
-    <T> Optional<T> findByItem(@Param("email") String item);
+    Optional<User> findByItem(@Param("email") String item);
 
     @Modifying()
     @Transactional
     @Query("DELETE FROM User WHERE email = ?1")
-    void deleteByEmail(String email);
+    Optional<User> deleteByEmail(User email);
+
+    Iterable<User> findAllCadaster();
 
     @Query("SELECT u FROM User u WHERE u.email = ?1")
     UserDetails findByEmail(String email);

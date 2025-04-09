@@ -27,7 +27,7 @@ import br.com.egotting.simple_api_restful_springboot.domain.Entity.Auth.Dto.Auth
 import br.com.egotting.simple_api_restful_springboot.domain.Entity.GeneralDTOs.GeneralRequestDTO;
 import br.com.egotting.simple_api_restful_springboot.domain.Entity.User.User;
 import br.com.egotting.simple_api_restful_springboot.domain.Enums.Roles;
-import br.com.egotting.simple_api_restful_springboot.domain.Repositories.User.UserRepository;
+import br.com.egotting.simple_api_restful_springboot.domain.Repositories.User.IUserRepository;
 import br.com.egotting.simple_api_restful_springboot.domain.Services.Security.Token.TokenService;
 import br.com.egotting.simple_api_restful_springboot.domain.Services.User.UserServices;
 
@@ -37,7 +37,7 @@ public class UserServiceTest {
     @InjectMocks
     UserServices userServices;
     @Mock
-    UserRepository userRepository;
+    IUserRepository userRepository;
     @Mock
     private BCryptPasswordEncoder passwordEncoder;
     @Mock

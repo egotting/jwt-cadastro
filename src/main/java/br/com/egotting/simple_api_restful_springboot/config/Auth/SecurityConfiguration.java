@@ -24,7 +24,7 @@ public class SecurityConfiguration {
     SecurityFilter securityFilter;
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity hs) throws Exception {
+    SecurityFilterChain securityFilterChain(HttpSecurity hs) throws Exception {
         return hs
                 .csrf(csrf -> csrf.disable())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

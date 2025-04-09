@@ -3,13 +3,11 @@ package br.com.egotting.simple_api_restful_springboot.api.User;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.egotting.simple_api_restful_springboot.domain.Entity.User.User;
+import br.com.egotting.simple_api_restful_springboot.domain.Entity.GeneralDTOs.GeneralReponseDTO;
+import br.com.egotting.simple_api_restful_springboot.domain.Entity.GeneralDTOs.GeneralRequestDTO;
 import br.com.egotting.simple_api_restful_springboot.domain.Entity.User.Dto.UserRequestDTO;
 import br.com.egotting.simple_api_restful_springboot.domain.Services.User.UserServices;
 
-import java.util.Optional;
-
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,33 +29,29 @@ public class UserController {
     }
 
     @PostMapping("/create/user")
-    public ResponseEntity<Void> CreateUser(
+    public ResponseEntity<GeneralReponseDTO<?>> CreateUser(
             @RequestBody UserRequestDTO user) {
-
-        userServices.saveUserDto(user);
-        return ResponseEntity.status(HttpStatus.CREATED).body(null);
+        return userServices.saveUserDto(user);
     }
 
     @GetMapping("/get/users")
-    public ResponseEntity<Iterable<User>> GetAllUsers() {
-        return ResponseEntity.status(HttpStatus.OK).body(userServices.FindAll());
+    public ResponseEntity<GeneralReponseDTO<?>> GetAllUsers() {
+        return userServices.findAll();
     }
 
     @GetMapping("/get/user/{email}")
-    public ResponseEntity<Optional<User>> GetUniqueUser(@PathVariable String email) {
-        return ResponseEntity.status(HttpStatus.OK).body(userServices.findEmail(email));
+    public ResponseEntity<GeneralReponseDTO<?>> GetUniqueUser(@PathVariable String email) {
+        return userServices.findEmail(email);
     }
 
     @PutMapping("/update/user/{email}")
-    public ResponseEntity<User> updateUser(@PathVariable String email, @RequestBody User user) {
-        userServices.UpdateUser(email, user);
-        return ResponseEntity.status(HttpStatus.OK).body(user);
+    public ResponseEntity<GeneralReponseDTO<?>> updateUser(@PathVariable String email,
+            @RequestBody GeneralRequestDTO user) {
+        return userServices.UpdateEmailUser(email, user);
     }
 
     @DeleteMapping("/delete/user/{email}")
-    ResponseEntity<Void> DeleteUser(@PathVariable @RequestBody String email) {
-
-        userServices.deleteByEmail(email);
-        return ResponseEntity.status(HttpStatus.OK).body(null);
+    ResponseEntity<GeneralReponseDTO<?>> DeleteUser(@PathVariable @RequestBody String email) {
+        return userServices.deleteUser(email);
     }
 }
