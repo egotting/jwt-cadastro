@@ -1,4 +1,4 @@
-package br.com.egotting.simple_api_restful_springboot.domain.Entity.User;
+package br.com.egotting.simple_api_restful_springboot.domain.Entities.User;
 
 import java.time.LocalDateTime;
 import java.util.Collection;
@@ -15,7 +15,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Size;
 import lombok.EqualsAndHashCode;
@@ -27,7 +26,6 @@ import lombok.Setter;
 @Getter
 @Setter
 @EqualsAndHashCode
-@Valid
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,6 +39,7 @@ public class User implements UserDetails {
     private LocalDateTime createdAccount = LocalDateTime.now();
 
     public User() {
+
     }
 
     public User(String email, String password, Roles roles) {
@@ -51,7 +50,7 @@ public class User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        if (this.roles == Roles.ADMIN)
+        if (getRoles() == Roles.ADMIN)
             return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_USER"));
         else
             return List.of(new SimpleGrantedAuthority("ROLE_USER"));
@@ -59,7 +58,7 @@ public class User implements UserDetails {
 
     @Override
     public String getUsername() {
-        return email;
+        return getEmail();
     }
 
     @Override
@@ -81,4 +80,5 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
 }

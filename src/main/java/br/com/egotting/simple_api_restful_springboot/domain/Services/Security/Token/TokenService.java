@@ -12,12 +12,12 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 
-import br.com.egotting.simple_api_restful_springboot.domain.Entity.User.User;
+import br.com.egotting.simple_api_restful_springboot.domain.Entities.User.User;
 
 @Service
 public class TokenService {
 
-    @Value("${JWT_TOKEN}")
+    @Value("${token.api.jwt}")
     private String secret;
 
     public String generateToken(User user) {

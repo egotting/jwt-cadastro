@@ -1,4 +1,4 @@
-package br.com.egotting.simple_api_restful_springboot.domain.Entity.User.Dto;
+package br.com.egotting.simple_api_restful_springboot.domain.Entities.User.Dto;
 
 import br.com.egotting.simple_api_restful_springboot.Validations.Interface.IPasswordValidator;
 import br.com.egotting.simple_api_restful_springboot.domain.Enums.Roles;
@@ -10,5 +10,5 @@ public record UserRequestDTO(
                 Long id,
                 @NotBlank(message = "Email não pode estar vazio") @Email String email,
                 @Size(min = 8) @IPasswordValidator @NotBlank(message = "Email não pode estar vazio") String password,
-                Roles role) {
+                @NotBlank Roles roles) {
 }

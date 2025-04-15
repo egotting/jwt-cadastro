@@ -3,11 +3,17 @@ package br.com.egotting.simple_api_restful_springboot.api.User;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.egotting.simple_api_restful_springboot.domain.Entity.GeneralDTOs.GeneralReponseDTO;
-import br.com.egotting.simple_api_restful_springboot.domain.Entity.GeneralDTOs.GeneralRequestDTO;
-import br.com.egotting.simple_api_restful_springboot.domain.Entity.User.Dto.UserRequestDTO;
+import br.com.egotting.simple_api_restful_springboot.domain.Entities.GeneralDTOs.GeneralReponseDTO;
+import br.com.egotting.simple_api_restful_springboot.domain.Entities.GeneralDTOs.GeneralRequestDTO;
+import br.com.egotting.simple_api_restful_springboot.domain.Entities.User.Dto.DeleteRequestDTO;
+import br.com.egotting.simple_api_restful_springboot.domain.Entities.User.Dto.UserRequestDTO;
+import br.com.egotting.simple_api_restful_springboot.domain.Entities.User.Dto.UserResponseDTO;
 import br.com.egotting.simple_api_restful_springboot.domain.Services.User.UserServices;
+import jakarta.validation.Valid;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,7 +27,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 @RestController
 @RequestMapping("/v1/api")
 public class UserController {
-
     private final UserServices userServices;
 
     public UserController(UserServices userServices) {
@@ -30,12 +35,12 @@ public class UserController {
 
     @PostMapping("/create/user")
     public ResponseEntity<GeneralReponseDTO<?>> CreateUser(
-            @RequestBody UserRequestDTO user) {
-        return userServices.saveUserDto(user);
+            @RequestBody @Validated UserRequestDTO data) {
+        return userServices.saveUserDto(data);
     }
 
     @GetMapping("/get/users")
-    public ResponseEntity<GeneralReponseDTO<?>> GetAllUsers() {
+    public ResponseEntity<GeneralReponseDTO<List<UserResponseDTO>>> GetAllUsers() {
         return userServices.findAll();
     }
 
@@ -46,12 +51,12 @@ public class UserController {
 
     @PutMapping("/update/user/{email}")
     public ResponseEntity<GeneralReponseDTO<?>> updateUser(@PathVariable String email,
-            @RequestBody GeneralRequestDTO user) {
-        return userServices.UpdateEmailUser(email, user);
+            @RequestBody GeneralRequestDTO data) {
+        return userServices.UpdateEmailUser(email, data);
     }
 
-    @DeleteMapping("/delete/user/{email}")
-    ResponseEntity<GeneralReponseDTO<?>> DeleteUser(@PathVariable @RequestBody String email) {
-        return userServices.deleteUser(email);
+    @DeleteMapping("/delete/user")
+    ResponseEntity<GeneralReponseDTO<?>> DeleteUser(@RequestBody @Valid DeleteRequestDTO data) {
+        return userServices.deleteUser(data);
     }
 }

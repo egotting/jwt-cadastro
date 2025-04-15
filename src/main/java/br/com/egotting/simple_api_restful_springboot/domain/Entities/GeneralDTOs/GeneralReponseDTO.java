@@ -1,4 +1,4 @@
-package br.com.egotting.simple_api_restful_springboot.domain.Entity.GeneralDTOs;
+package br.com.egotting.simple_api_restful_springboot.domain.Entities.GeneralDTOs;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

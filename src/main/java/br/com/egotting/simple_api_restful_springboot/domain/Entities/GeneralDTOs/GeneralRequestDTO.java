@@ -1,4 +1,4 @@
-package br.com.egotting.simple_api_restful_springboot.domain.Entity.GeneralDTOs;
+package br.com.egotting.simple_api_restful_springboot.domain.Entities.GeneralDTOs;
 
 import br.com.egotting.simple_api_restful_springboot.Validations.Interface.IPasswordValidator;
 import jakarta.validation.constraints.Email;
@@ -6,5 +6,5 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
 public record GeneralRequestDTO(@Email @NotBlank(message = "Email não pode estar vazio") String email,
-        @Size(min = 8) @IPasswordValidator @NotBlank(message = "Senha não pode estar vazio") String password) {
+                @Size(min = 8) @IPasswordValidator @NotBlank(message = "Senha não pode estar vazio") String password) {
 }
