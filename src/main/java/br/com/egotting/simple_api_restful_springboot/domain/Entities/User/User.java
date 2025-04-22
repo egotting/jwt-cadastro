@@ -39,7 +39,6 @@ public class User implements UserDetails {
     private LocalDateTime createdAccount = LocalDateTime.now();
 
     public User() {
-
     }
 
     public User(String email, String password, Roles roles) {
@@ -50,15 +49,14 @@ public class User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        if (getRoles() == Roles.ADMIN)
+        if (roles == Roles.ADMIN)
             return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_USER"));
-        else
-            return List.of(new SimpleGrantedAuthority("ROLE_USER"));
+        else return List.of(new SimpleGrantedAuthority("ROLE_USER"));
     }
 
     @Override
     public String getUsername() {
-        return getEmail();
+        return email;
     }
 
     @Override
