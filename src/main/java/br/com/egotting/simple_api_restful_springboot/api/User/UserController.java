@@ -1,5 +1,6 @@
 package br.com.egotting.simple_api_restful_springboot.api.User;
 
+import br.com.egotting.simple_api_restful_springboot.Pattern.ResultPattern.Result;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -34,7 +35,7 @@ public class UserController {
     }
 
     @PostMapping("/create/user")
-    public ResponseEntity<GeneralReponseDTO<?>> CreateUser(
+    public ResponseEntity<Result<?>> CreateUser(
             @RequestBody @Validated UserRequestDTO data) {
         return userServices.saveUserDto(data);
     }
@@ -45,18 +46,18 @@ public class UserController {
     }
 
     @GetMapping("/get/user/{email}")
-    public ResponseEntity<GeneralReponseDTO<?>> GetUniqueUser(@PathVariable String email) {
+    public ResponseEntity<Result<?>> GetUniqueUser(@PathVariable String email) {
         return userServices.findEmail(email);
     }
 
     @PutMapping("/update/user/{email}")
-    public ResponseEntity<GeneralReponseDTO<?>> updateUser(@PathVariable String email,
-            @RequestBody GeneralRequestDTO data) {
+    public ResponseEntity<Result<?>> updateUser(@PathVariable String email,
+                                                @RequestBody GeneralRequestDTO data) {
         return userServices.UpdateEmailUser(email, data);
     }
 
     @DeleteMapping("/delete/user")
-    ResponseEntity<GeneralReponseDTO<?>> DeleteUser(@RequestBody @Valid DeleteRequestDTO data) {
+    ResponseEntity<Result<?>> DeleteUser(@RequestBody @Valid DeleteRequestDTO data) {
         return userServices.deleteUser(data);
     }
 }

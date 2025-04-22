@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+import br.com.egotting.simple_api_restful_springboot.Pattern.ResultPattern.Error;
+import br.com.egotting.simple_api_restful_springboot.Pattern.ResultPattern.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
@@ -45,19 +47,19 @@ public class UserServices implements IUserService {
     private TokenService tokenService;
 
     @Override
-    public ResponseEntity<GeneralReponseDTO<?>> saveUserDto(UserRequestDTO data) {
+    public ResponseEntity<Result<?>> saveUserDto(UserRequestDTO data) {
         try {
             var nUser = new User(data.email(), data.password(), data.roles());
             userRepository.save(nUser);
 
             return ResponseEntity
                     .status(HttpStatus.CREATED)
-                    .body(new GeneralReponseDTO<>(ResponseStatus.SUCCESS.name(), "New user created: " + data.email()));
+                    .body(new Result<>(Error.Success("New.User.Created", data.email())));
         } catch (Exception e) {
             log.error("Falha ao criar o usuario: " + e.getMessage());
             return ResponseEntity
                     .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body(new GeneralReponseDTO<>(ResponseStatus.ERROR.name(), "Erro interno ao criar o usuário"));
+                    .body(new Result<>(Error.Failure("Error.Created.User", "Erro interno ao criar o usuário")));
         }
 
     }
@@ -70,7 +72,6 @@ public class UserServices implements IUserService {
 
             var userDto = users.stream().map(user -> new UserResponseDTO(user.getEmail(), user.getRoles()))
                     .collect(Collectors.toList());
-
             var response = new GeneralReponseDTO<>(ResponseStatus.SUCCESS.name(), userDto);
 
             return ResponseEntity
@@ -83,7 +84,7 @@ public class UserServices implements IUserService {
     }
 
     @Override
-    public ResponseEntity<GeneralReponseDTO<?>> findEmail(String item)
+    public ResponseEntity<Result<?>> findEmail(String item)
             throws NotFoundUserByEmail, UserServiceLogicException {
         try {
             var user = userRepository.findByItem(item)
@@ -91,95 +92,105 @@ public class UserServices implements IUserService {
 
             return ResponseEntity
                     .status(HttpStatus.OK)
-                    .body(new GeneralReponseDTO<>(ResponseStatus.SUCCESS.name(),
-                            "Usuario encontrado: " + user.getEmail()));
+                    .body(new Result<>(Error.Success("New.User.Created", user.getEmail())));
         } catch (Exception e) {
-            log.error("Falha ao buscar o usuario: " + e.getMessage());
-            throw new UserServiceLogicException("");
+            return ResponseEntity
+                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(new Result<>(Error.Failure("Error.NotFound.User", "Erro interno ao tentar encontrar o usuário")));
         }
 
     }
 
     @Override
-    public ResponseEntity<GeneralReponseDTO<?>> UpdateEmailUser(String email, GeneralRequestDTO user)
+    public ResponseEntity<Result<?>> UpdateEmailUser(String email, GeneralRequestDTO user)
             throws NotFoundUserByEmail, UserServiceLogicException {
         try {
             var _user = userRepository.findByItem(email)
                     .orElseThrow(() -> new NotFoundUserByEmail("Email incorreto ou não cadastrado"));
+            if (_user == null) {
+                return ResponseEntity
+                        .status(HttpStatus.NOT_FOUND)
+                        .body(new Result<>(Error.NotFound("Error.NotFound.User", "Usuario não encontrado")));
+            }
 
             _user.setEmail(user.email());
+
 
             userRepository.save(_user);
             return ResponseEntity
                     .status(HttpStatus.OK)
-                    .body(new GeneralReponseDTO<>(ResponseStatus.SUCCESS.name(),
-                            "Seu email foi atualizado com sucesso!"));
+                    .body(new Result<>(Error.Success("Error.Update.User", "Usuario atualizado com sucesso")));
         } catch (Exception e) {
             log.error("Falha ao atualizar o usuario: " + e.getMessage());
-            throw new UserServiceLogicException("");
+            return ResponseEntity
+                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(new Result<>(Error.Failure("Error.Update.User", "Erro interno ao atualizar o usuário")));
         }
     }
 
     @Override
-    public ResponseEntity<GeneralReponseDTO<?>> deleteUser(DeleteRequestDTO data)
+    public ResponseEntity<Result<?>> deleteUser(DeleteRequestDTO data)
             throws NotFoundUserByEmail, UserServiceLogicException {
         try {
             var user = userRepository.findByItem(data.email())
                     .orElseThrow(() -> new NotFoundUserByEmail("Email incorreto ou não cadastrado"));
             userRepository.deleteByEmail(user);
-
             return ResponseEntity
                     .status(HttpStatus.OK)
-                    .body(new GeneralReponseDTO<>(ResponseStatus.SUCCESS.name(),
-                            "Usuario deletado com sucesso!"));
+                    .body(new Result<>(Error.Success("Error.Delete.User", "Usuario deletado com sucesso")));
         } catch (Exception e) {
             log.error("Falha ao deletar o usuario: " + e.getMessage());
-            throw new UserServiceLogicException("");
+            return ResponseEntity
+                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(new Result<>(Error.Failure("Error.Deletar.User", "Erro interno ao deletar o usuário")));
         }
     }
 
     @Override
-    public ResponseEntity<GeneralReponseDTO<?>> Cadastro(AuthRequestDTO data)
+    public ResponseEntity<Result<?>> Cadastro(AuthRequestDTO data)
             throws UserServiceLogicException, NullEmail {
 
         try {
             if (userRepository.existsByEmail(data.email())) {
                 return ResponseEntity
-                        .status(HttpStatus.CONFLICT)
-                        .body(new GeneralReponseDTO<>(ResponseStatus.ERROR.name(),
-                                "Este e-mail já está cadastrado: " + data.email()));
+                        .status(HttpStatus.NOT_IMPLEMENTED)
+                        .body(new Result<>(Error.NotFound("Error.Validation.User", "Usuario este usuario ja existe")));
             }
             String encryptionPassword = new BCryptPasswordEncoder().encode(data.password());
             User nUser = new User(data.email(), encryptionPassword, data.roles());
             userRepository.save(nUser);
             return ResponseEntity
-                    .status(HttpStatus.CREATED)
-                    .body(new GeneralReponseDTO<>(ResponseStatus.SUCCESS.name(), "Usuario cadastrado com sucesso!"));
+                    .status(HttpStatus.OK)
+                    .body(new Result<>(Error.Success("Error.Cadastras.User", "Usuario cadastrar com sucesso")));
         } catch (Exception e) {
             log.error("Falha ao cadastrar o usuario: " + e.getMessage());
-            throw new UserServiceLogicException("");
+            return ResponseEntity
+                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(new Result<>(Error.Failure("Error.Cadastras.User", "Erro interno ao cadastras o usuário")));
         }
-
     }
 
     @Override
-    public ResponseEntity<GeneralReponseDTO<?>> Login(GeneralRequestDTO data)
+    public ResponseEntity<Result<?>> Login(GeneralRequestDTO data)
             throws NotFoundUser, UserServiceLogicException {
-
-        if (userRepository.findByItem(data.email()) == null) {
-            throw new NotFoundUser("Email incorreto ou não cadastrado");
-        }
         try {
+            if (!userRepository.existsByEmail(data.email())) {
+                return ResponseEntity
+                        .status(HttpStatus.NOT_FOUND)
+                        .body(new Result<>(Error.NotFound("Error.NotFound.User", "Usuario nao encontrado")));
+            }
             var userPass = new UsernamePasswordAuthenticationToken(data.email(), data.password());
             var auth = this.manager.authenticate(userPass);
 
             tokenService.generateToken((User) auth.getPrincipal());
             return ResponseEntity
                     .status(HttpStatus.OK)
-                    .body(new GeneralReponseDTO<>(ResponseStatus.SUCCESS.name(), "Usuario logado com sucesso!"));
+                    .body(new Result<>(Error.Success("Error.Logar.User", "Usuario logado com sucesso")));
         } catch (Exception e) {
             log.error("Falha ao logar o usuario: " + e.getMessage());
-            throw new UserServiceLogicException("");
+            return ResponseEntity
+                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(new Result<>(Error.Failure("Error.Logar.User", "Erro interno ao logar o usuário")));
         }
 
     }

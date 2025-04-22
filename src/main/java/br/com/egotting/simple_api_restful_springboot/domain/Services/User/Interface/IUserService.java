@@ -2,6 +2,7 @@ package br.com.egotting.simple_api_restful_springboot.domain.Services.User.Inter
 
 import java.util.List;
 
+import br.com.egotting.simple_api_restful_springboot.Pattern.ResultPattern.Result;
 import org.springframework.http.ResponseEntity;
 
 import br.com.egotting.simple_api_restful_springboot.Exceptions.NotFoundUser;
@@ -15,23 +16,23 @@ import br.com.egotting.simple_api_restful_springboot.domain.Entities.User.Dto.Us
 import br.com.egotting.simple_api_restful_springboot.domain.Entities.User.Dto.UserResponseDTO;
 
 public interface IUserService {
-        public ResponseEntity<GeneralReponseDTO<?>> saveUserDto(UserRequestDTO user);
+        public ResponseEntity<Result<?>> saveUserDto(UserRequestDTO user);
 
         public ResponseEntity<GeneralReponseDTO<List<UserResponseDTO>>> findAll()
                         throws UserServiceLogicException;
 
-        public ResponseEntity<GeneralReponseDTO<?>> findEmail(String item)
+        public ResponseEntity<Result<?>> findEmail(String item)
                         throws NotFoundUserByEmail, UserServiceLogicException;
 
-        public ResponseEntity<GeneralReponseDTO<?>> UpdateEmailUser(String email, GeneralRequestDTO user)
+        public ResponseEntity<Result<?>> UpdateEmailUser(String email, GeneralRequestDTO user)
                         throws NotFoundUserByEmail, UserServiceLogicException;
 
-        public ResponseEntity<GeneralReponseDTO<?>> deleteUser(DeleteRequestDTO data)
+        public ResponseEntity<Result<?>> deleteUser(DeleteRequestDTO data)
                         throws NotFoundUserByEmail, UserServiceLogicException;
 
-        public ResponseEntity<GeneralReponseDTO<?>> Cadastro(AuthRequestDTO data)
+        public ResponseEntity<Result<?>> Cadastro(AuthRequestDTO data)
                         throws UserServiceLogicException;
 
-        public ResponseEntity<GeneralReponseDTO<?>> Login(GeneralRequestDTO data)
+        public ResponseEntity<Result<?>> Login(GeneralRequestDTO data)
                         throws NotFoundUser;
 }

@@ -1,5 +1,6 @@
 package br.com.egotting.simple_api_restful_springboot.api.User;
 
+import br.com.egotting.simple_api_restful_springboot.Pattern.ResultPattern.Result;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,12 +23,12 @@ public class AuthController {
     private UserServices services;
 
     @PostMapping("/user/login")
-    public ResponseEntity<GeneralReponseDTO<?>> login(@RequestBody @Validated GeneralRequestDTO data) {
+    public ResponseEntity<Result<?>> login(@RequestBody @Validated GeneralRequestDTO data) {
         return services.Login(data);
     }
 
     @PostMapping("/user/register")
-    public ResponseEntity<GeneralReponseDTO<?>> register(@RequestBody @Validated AuthRequestDTO data) {
+    public ResponseEntity<Result<?>> register(@RequestBody @Validated AuthRequestDTO data) {
         return services.Cadastro(data);
     }
 }

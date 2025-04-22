@@ -8,11 +8,11 @@ import lombok.Setter;
 @Setter
 public class UserResponseDTO {
     String email;
-    Roles roles;
+    Roles Roles;
 
     public UserResponseDTO(String email, Roles roles) {
         this.email = email;
-        this.roles = roles;
+        this.Roles = roles;
     }
 
 }
