@@ -1,13 +1,8 @@
 package br.com.egotting.simple_api_restful_springboot.Pattern.ResultPattern;
 
 import br.com.egotting.simple_api_restful_springboot.Pattern.ResultPattern.Enum.ErrorTypes;
-import lombok.Getter;
-import lombok.Setter;
 
-import java.util.List;
 
-@Getter
-@Setter
 public class Error {
     private static final Error None = new Error("", "", ErrorTypes.Failure);
 
@@ -47,4 +42,15 @@ public class Error {
         return new Error(code, description, ErrorTypes.Validation);
     }
 
+    public String getCode() {
+        return Code;
+    }
+
+    public String getDescription() {
+        return Description;
+    }
+
+    public ErrorTypes getTypes() {
+        return Types;
+    }
 }

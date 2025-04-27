@@ -12,27 +12,21 @@ import br.com.egotting.simple_api_restful_springboot.domain.Entities.Auth.Dto.Au
 import br.com.egotting.simple_api_restful_springboot.domain.Entities.GeneralDTOs.GeneralReponseDTO;
 import br.com.egotting.simple_api_restful_springboot.domain.Entities.GeneralDTOs.GeneralRequestDTO;
 import br.com.egotting.simple_api_restful_springboot.domain.Entities.User.Dto.DeleteRequestDTO;
-import br.com.egotting.simple_api_restful_springboot.domain.Entities.User.Dto.UserRequestDTO;
 import br.com.egotting.simple_api_restful_springboot.domain.Entities.User.Dto.UserResponseDTO;
 
 public interface IUserService {
-        public ResponseEntity<Result<?>> saveUserDto(UserRequestDTO user);
 
-        public ResponseEntity<GeneralReponseDTO<List<UserResponseDTO>>> findAll()
-                        throws UserServiceLogicException;
+    ResponseEntity<GeneralReponseDTO<List<UserResponseDTO>>> findAll()
+            throws UserServiceLogicException;
 
-        public ResponseEntity<Result<?>> findEmail(String item)
-                        throws NotFoundUserByEmail, UserServiceLogicException;
+    ResponseEntity<Result<?>> findEmail(String item)
+            throws NotFoundUserByEmail, UserServiceLogicException;
 
-        public ResponseEntity<Result<?>> UpdateEmailUser(String email, GeneralRequestDTO user)
-                        throws NotFoundUserByEmail, UserServiceLogicException;
+    ResponseEntity<Result<?>> updateEmailUser(GeneralRequestDTO data)
+            throws NotFoundUserByEmail, UserServiceLogicException;
 
-        public ResponseEntity<Result<?>> deleteUser(DeleteRequestDTO data)
-                        throws NotFoundUserByEmail, UserServiceLogicException;
+    ResponseEntity<Result<?>> deleteUser(DeleteRequestDTO data)
+            throws NotFoundUserByEmail, UserServiceLogicException;
 
-        public ResponseEntity<Result<?>> Cadastro(AuthRequestDTO data)
-                        throws UserServiceLogicException;
 
-        public ResponseEntity<Result<?>> Login(GeneralRequestDTO data)
-                        throws NotFoundUser;
 }

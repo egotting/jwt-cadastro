@@ -9,6 +9,7 @@ import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import br.com.egotting.simple_api_restful_springboot.domain.Services.Auth.Interface.IAuthService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
@@ -26,16 +27,16 @@ import br.com.egotting.simple_api_restful_springboot.Exceptions.NullEmail;
 import br.com.egotting.simple_api_restful_springboot.domain.Entities.Auth.Dto.AuthRequestDTO;
 import br.com.egotting.simple_api_restful_springboot.domain.Entities.GeneralDTOs.GeneralRequestDTO;
 import br.com.egotting.simple_api_restful_springboot.domain.Entities.User.User;
-import br.com.egotting.simple_api_restful_springboot.domain.Enums.Roles;
 import br.com.egotting.simple_api_restful_springboot.domain.Repositories.User.UserRepository;
-import br.com.egotting.simple_api_restful_springboot.domain.Services.Security.Token.TokenService;
-import br.com.egotting.simple_api_restful_springboot.domain.Services.User.UserServices;
+import br.com.egotting.simple_api_restful_springboot.domain.Services.Token.TokenService;
 
 @ExtendWith(MockitoExtension.class)
 public class UserServiceTest {
 
+
     @InjectMocks
-    UserServices userServices;
+    IAuthService authService;
+
     @Mock
     UserRepository userRepository;
     @Mock
@@ -49,26 +50,24 @@ public class UserServiceTest {
     public void testCadastroUser() {
         String Email = "tes.test@gmail.com";
         String Password = "!Test1123342532452";
-        Roles roles = Roles.USER;
-        AuthRequestDTO data = new AuthRequestDTO(Email, Password, roles);
+        AuthRequestDTO data = new AuthRequestDTO(Email, Password);
 
-        userServices.Cadastro(data);
+        authService.Cadastro(data);
 
         ArgumentCaptor<User> userCaptor = ArgumentCaptor.forClass(User.class);
         verify(userRepository).save(userCaptor.capture());
 
-        assertEquals(Email, data.email());
-        assertEquals(Password, data.password());
-        assertEquals(roles, data.roles());
+        assertEquals(Email, data.getEmail());
+        assertEquals(Password, data.getPassword());
 
     }
 
     @Test
     public void testCadastroUserWithNullEmail() {
 
-        AuthRequestDTO data = new AuthRequestDTO(null, "test", Roles.USER);
+        AuthRequestDTO data = new AuthRequestDTO(null, "test");
 
-        assertThrows(NullEmail.class, () -> userServices.Cadastro(data));
+        assertThrows(NullEmail.class, () -> authService.Cadastro(data));
         verify(userRepository, never()).save(any());
     }
 
@@ -88,7 +87,7 @@ public class UserServiceTest {
         when(manager.authenticate(authInput)).thenReturn(authentication);
 
         when(tokenService.generateToken(user)).thenReturn("token falso");
-        userServices.Login(data);
+        authService.Login(data);
 
         verify(manager).authenticate(authInput);
         verify(tokenService).generateToken(user);
@@ -100,7 +99,7 @@ public class UserServiceTest {
         String password = "test1123";
         var data = new GeneralRequestDTO(email, password);
 
-        assertThrows(RuntimeException.class, () -> userServices.Login(data));
+        assertThrows(RuntimeException.class, () -> authService.Login(data));
     }
 
     @Test

@@ -1,4 +1,4 @@
-package br.com.egotting.simple_api_restful_springboot.domain.Services.Security.Token;
+package br.com.egotting.simple_api_restful_springboot.domain.Services.Token;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
@@ -17,7 +17,7 @@ import br.com.egotting.simple_api_restful_springboot.domain.Entities.User.User;
 @Service
 public class TokenService {
 
-    @Value("${token.api.jwt}")
+    @Value("${jwt.private.key}")
     private String secret;
 
     public String generateToken(User user) {
