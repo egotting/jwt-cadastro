@@ -1,6 +1,7 @@
 package br.com.egotting.simple_api_restful_springboot.api.User;
 
 import br.com.egotting.simple_api_restful_springboot.Pattern.ResultPattern.Result;
+import br.com.egotting.simple_api_restful_springboot.domain.Entities.User.Dto.CreateUserRequestDTO;
 import br.com.egotting.simple_api_restful_springboot.domain.Services.Auth.Interface.IAuthService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,15 +20,17 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class AuthController {
 
     @Autowired
-    private IAuthService services;
+    IAuthService services;
 
-    @PostMapping("/user/login")
-    public ResponseEntity<Result<?>> login(@RequestBody @Validated GeneralRequestDTO data) {
-        return services.Login(data);
+    @PostMapping("/login")
+    public ResponseEntity<Result<?>> login(
+            @RequestBody AuthRequestDTO data) {
+        return services.login(data);
     }
 
-    @PostMapping("/user/register")
-    public ResponseEntity<Result<?>> register(@RequestBody @Validated AuthRequestDTO data) {
-        return services.Cadastro(data);
+    @PostMapping("/register")
+    public ResponseEntity<Result<?>> register(
+            @RequestBody CreateUserRequestDTO data) {
+        return services.register(data);
     }
 }
