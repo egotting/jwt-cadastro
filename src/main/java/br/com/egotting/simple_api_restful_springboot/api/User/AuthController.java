@@ -1,12 +1,13 @@
 package br.com.egotting.simple_api_restful_springboot.api.User;
 
+import br.com.egotting.simple_api_restful_springboot.Pattern.ResultPattern.Result;
+import br.com.egotting.simple_api_restful_springboot.domain.Entities.User.Dto.CreateUserRequestDTO;
+import br.com.egotting.simple_api_restful_springboot.domain.Services.Auth.Interface.IAuthService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.egotting.simple_api_restful_springboot.domain.Entity.Auth.Dto.AuthRequestDTO;
-import br.com.egotting.simple_api_restful_springboot.domain.Entity.GeneralDTOs.GeneralReponseDTO;
-import br.com.egotting.simple_api_restful_springboot.domain.Entity.GeneralDTOs.GeneralRequestDTO;
-import br.com.egotting.simple_api_restful_springboot.domain.Services.User.UserServices;
+import br.com.egotting.simple_api_restful_springboot.domain.Entities.Auth.Dto.AuthRequestDTO;
+import br.com.egotting.simple_api_restful_springboot.domain.Entities.GeneralDTOs.GeneralRequestDTO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,16 +20,17 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class AuthController {
 
     @Autowired
-    private UserServices services;
+    IAuthService services;
 
-    @PostMapping("/user/login")
-    public ResponseEntity<GeneralReponseDTO<?>> login(@RequestBody @Validated GeneralRequestDTO data) {
-        return services.Login(data);
+    @PostMapping("/login")
+    public ResponseEntity<Result<?>> login(
+            @RequestBody AuthRequestDTO data) {
+        return services.login(data);
     }
 
-    @PostMapping("/user/register")
-    public ResponseEntity<GeneralReponseDTO<?>> register(@RequestBody @Validated AuthRequestDTO data) {
-        return services.Cadastro(data);
+    @PostMapping("/register")
+    public ResponseEntity<Result<?>> register(
+            @RequestBody CreateUserRequestDTO data) {
+        return services.register(data);
     }
-
 }
