@@ -467,3 +467,7 @@ $RECYCLE.BIN/
 
 debug.log
 debug.log
+/src/main/resources/jwt/app.key
+/target/classes/jwt/app.key
+/src/main/resources/jwt/app.pub
+/target/classes/jwt/app.pub
