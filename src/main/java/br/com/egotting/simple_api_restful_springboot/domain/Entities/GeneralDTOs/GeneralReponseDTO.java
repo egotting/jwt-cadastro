@@ -15,8 +15,10 @@ public class GeneralReponseDTO<T> {
         this.response = response;
     }
 
+
     @Override
     public boolean equals(Object o) {
+        if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         GeneralReponseDTO<?> that = (GeneralReponseDTO<?>) o;
         return Objects.equals(status, that.status) && Objects.equals(response, that.response);
