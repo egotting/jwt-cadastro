@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 
 import br.com.egotting.simple_api_restful_springboot.Pattern.ResultPattern.Error;
 import br.com.egotting.simple_api_restful_springboot.Pattern.ResultPattern.Result;
+import br.com.egotting.simple_api_restful_springboot.domain.Entities.User.Dto.FindEmailDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,16 +20,18 @@ import br.com.egotting.simple_api_restful_springboot.domain.Entities.User.User;
 import br.com.egotting.simple_api_restful_springboot.domain.Entities.User.Dto.DeleteRequestDTO;
 import br.com.egotting.simple_api_restful_springboot.domain.Entities.User.Dto.UserResponseDTO;
 import br.com.egotting.simple_api_restful_springboot.domain.Enums.ResponseStatus;
-import br.com.egotting.simple_api_restful_springboot.domain.Repositories.User.UserRepository;
-import br.com.egotting.simple_api_restful_springboot.domain.Services.User.Interface.IUserService;
+import br.com.egotting.simple_api_restful_springboot.domain.Repositories.User.IUserRepository;
+import br.com.egotting.simple_api_restful_springboot.domain.Services.User.Interface.IUserServices;
 import org.springframework.stereotype.Service;
 
-@Service
-public class UserServices implements IUserService {
+import static br.com.egotting.simple_api_restful_springboot.Pattern.ResultPattern.Error.*;
 
-    private static final Logger log = LoggerFactory.getLogger(UserServices.class);
+@Service
+public class UserServicesImpl implements IUserServices {
+
+    private static final Logger log = LoggerFactory.getLogger(UserServicesImpl.class);
     @Autowired
-    UserRepository userRepository;
+    IUserRepository userRepository;
 
 
     @Override
@@ -53,19 +56,20 @@ public class UserServices implements IUserService {
     }
 
     @Override
-    public ResponseEntity<Result<?>> findEmail(String item)
+    public ResponseEntity<Result<?>> findEmail(FindEmailDTO data)
             throws NotFoundUserByEmail, UserServiceLogicException {
         try {
-            var user = userRepository.findByItem(item)
-                    .orElseThrow(() -> new NotFoundUserByEmail("Email incorreto ou não cadastrado"));
+            var user = userRepository.findByEmail(data.email());
+
 
             return ResponseEntity
                     .status(HttpStatus.OK)
-                    .body(Result.Success(Error.Success("Usuario.Encontrado", "Usuario Encontrado com Sucesso: " + user.getEmail())));
+                    .body(Result.Success(Error.Success("Usuario.Encontrado", "Usuario Encontrado com Sucesso: " + user.get().getEmail())));
         } catch (Exception e) {
+            log.error("Erro no servidor", e.getMessage());
             return ResponseEntity
-                    .status(HttpStatus.NOT_FOUND)
-                    .body(Result.Failure(Error.Failure("Error.NotFound.User", "Erro interno ao tentar encontrar o usuário")));
+                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(Result.Failure(Error.ServerError("Server.Error", "Erro no Servidor")));
         }
 
     }
@@ -74,13 +78,11 @@ public class UserServices implements IUserService {
     public ResponseEntity<Result<?>> updateEmailUser(GeneralRequestDTO data)
             throws NotFoundUserByEmail, UserServiceLogicException {
         try {
-            var _user = userRepository.existsByEmail(data.email());
-            if (!_user) {
-                return ResponseEntity
-                        .status(HttpStatus.NOT_FOUND)
-                        .body(Result.Failure(Error.NotFound("Error.NotFound.User", "Usuario não encontrado")));
-            }
-            var updateUser = new User(data.email(), data.password());
+            var user = userRepository.findByEmail(data.email());
+            User updateUser = new User.builder()
+                    .email(data.email())
+                    .password(data.password())
+                    .build();
             userRepository.save(updateUser);
             return ResponseEntity
                     .status(HttpStatus.OK)
@@ -89,7 +91,7 @@ public class UserServices implements IUserService {
             log.error("Falha ao atualizar o usuario: " + e.getMessage());
             return ResponseEntity
                     .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body(Result.Failure(Error.Failure("Error.Update.User", "Erro interno ao atualizar o usuário")));
+                    .body(Result.Failure(ServerError("Error.Update.User", "Erro interno ao atualizar o usuário")));
         }
     }
 
@@ -97,8 +99,8 @@ public class UserServices implements IUserService {
     public ResponseEntity<Result<?>> deleteUser(DeleteRequestDTO data)
             throws NotFoundUserByEmail, UserServiceLogicException {
         try {
-            var user = userRepository.findByItem(data.email())
-                    .orElseThrow(() -> new NotFoundUserByEmail("Email incorreto ou não cadastrado"));
+            var user = userRepository.findByEmail(data.email());
+
             userRepository.deleteByEmail(user);
             return ResponseEntity
                     .status(HttpStatus.OK)
@@ -107,7 +109,7 @@ public class UserServices implements IUserService {
             log.error("Falha ao deletar o usuario: " + e.getMessage());
             return ResponseEntity
                     .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body(Result.Failure(Error.Failure("Error.Deletar.User", "Erro interno ao deletar o usuário")));
+                    .body(Result.Failure(ServerError("Error.Deletar.User", "Erro interno ao deletar o usuário")));
         }
     }
 
