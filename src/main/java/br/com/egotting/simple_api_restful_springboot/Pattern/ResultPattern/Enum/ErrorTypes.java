@@ -5,5 +5,6 @@ public enum ErrorTypes {
     Failure,
     Warning,
     NotFound,
-    Validation
+    Validation,
+    SERVER_ERROR
 }

@@ -42,6 +42,10 @@ public class Error {
         return new Error(code, description, ErrorTypes.Validation);
     }
 
+    public static Error ServerError(String code, String description) {
+        return new Error(code, description, ErrorTypes.SERVER_ERROR);
+    }
+
     public String getCode() {
         return Code;
     }
