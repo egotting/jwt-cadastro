@@ -1,12 +1,12 @@
 package br.com.egotting.simple_api_restful_springboot.domain.Enums;
 
-public enum Roles {
+public enum NameRoles {
     ADMIN("ADMIN"),
     USER("USER");
 
     String roleId;
 
-    Roles(String roleId) {
+    NameRoles(String roleId) {
         this.roleId = roleId;
     }
 
