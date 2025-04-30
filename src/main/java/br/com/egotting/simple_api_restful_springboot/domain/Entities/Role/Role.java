@@ -4,10 +4,10 @@ import br.com.egotting.simple_api_restful_springboot.domain.Enums.NameRoles;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "tb_role")
+@Table(name = "roles")
 public class Role {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "role_id")
     private Long id;
 
