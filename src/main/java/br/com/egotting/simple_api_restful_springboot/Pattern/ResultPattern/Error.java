@@ -43,7 +43,11 @@ public class Error {
     }
 
     public static Error ServerError(String code, String description) {
-        return new Error(code, description, ErrorTypes.SERVER_ERROR);
+        return new Error(code, description, ErrorTypes.ServerError);
+    }
+
+    public static Error Unauthorized(String code, String description) {
+        return new Error(code, description, ErrorTypes.Authorization);
     }
 
     public String getCode() {
