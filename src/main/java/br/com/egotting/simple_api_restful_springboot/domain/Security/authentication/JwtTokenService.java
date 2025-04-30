@@ -8,25 +8,26 @@ import com.auth0.jwt.exceptions.JWTVerificationException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import java.time.Instant;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
+import java.time.*;
 
 @Service
 public class JwtTokenService {
+    private static final String ISSUER = "simple-api-restul-springboot";
     @Value("${jwt.private.key}")
-    private static String SECRET_KEY;
-    private static final String ISSUER = "simple_api_restul-springboot";
+    private String SECRET_KEY;
 
     public String GenerateToken(UserDetailsImpl user) {
+
         try {
             Algorithm algoritm = Algorithm.HMAC256(SECRET_KEY);
-            return JWT.create()
+            String token = JWT.create()
                     .withIssuer(ISSUER)
                     .withIssuedAt(creationAt())
                     .withExpiresAt(expireAt())
                     .withSubject(user.getUsername())
                     .sign(algoritm);
+            System.out.println("Token: " + token);
+            return token;
         } catch (JWTCreationException e) {
             throw new JWTCreationException("Erro ao gerar o token", e);
         }
@@ -46,11 +47,10 @@ public class JwtTokenService {
     }
 
     public Instant creationAt() {
-        return ZonedDateTime.now(ZoneId.of("America/Recife")).toInstant();
+        return LocalDateTime.now().toInstant(ZoneOffset.of("-03:00"));
     }
 
     public Instant expireAt() {
-        return ZonedDateTime.now(ZoneId.of("America/Recife")).plusHours(4).toInstant();
-
+        return LocalDateTime.now().plusHours(4).toInstant(ZoneOffset.of("-03:00"));
     }
 }
