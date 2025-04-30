@@ -2,9 +2,9 @@ package br.com.egotting.simple_api_restful_springboot.domain.Enums;
 
 public enum NameRoles {
     ADMIN("ADMIN"),
-    USER("USER");
+    COMMON("COMMON");
 
-    String roleId;
+    private String roleId;
 
     NameRoles(String roleId) {
         this.roleId = roleId;
