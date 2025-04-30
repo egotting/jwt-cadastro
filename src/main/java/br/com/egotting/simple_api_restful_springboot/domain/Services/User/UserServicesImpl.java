@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 
 import br.com.egotting.simple_api_restful_springboot.Pattern.ResultPattern.Error;
 import br.com.egotting.simple_api_restful_springboot.Pattern.ResultPattern.Result;
+import br.com.egotting.simple_api_restful_springboot.domain.Entities.User.Dto.FindAllDTO;
 import br.com.egotting.simple_api_restful_springboot.domain.Entities.User.Dto.FindEmailDTO;
 import br.com.egotting.simple_api_restful_springboot.domain.Security.config.SecurityConfiguration;
 import org.slf4j.Logger;
@@ -13,13 +14,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import br.com.egotting.simple_api_restful_springboot.Exceptions.UserServiceLogicException;
-import br.com.egotting.simple_api_restful_springboot.domain.Entities.GeneralDTOs.ResultFindAll;
-import br.com.egotting.simple_api_restful_springboot.domain.Entities.GeneralDTOs.GeneralRequestDTO;
-import br.com.egotting.simple_api_restful_springboot.domain.Entities.User.Dto.FindAllDTO;
+import br.com.egotting.simple_api_restful_springboot.domain.Entities.ResponseStatusDTOs.ResponseStatusDTO;
+import br.com.egotting.simple_api_restful_springboot.domain.Entities.User.Dto.UpdateRequestDTO;
 import br.com.egotting.simple_api_restful_springboot.domain.Enums.ResponseStatus;
 import br.com.egotting.simple_api_restful_springboot.domain.Repositories.User.IUserRepository;
 import br.com.egotting.simple_api_restful_springboot.domain.Services.User.Interface.IUserServices;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -32,22 +31,20 @@ public class UserServicesImpl implements IUserServices {
 
 
     private final IUserRepository userRepository;
-    private final AuthenticationManager authenticationManager;
 
     private final PasswordEncoder passwordEncoder;
     private final SecurityConfiguration securityConfiguration;
 
-    public UserServicesImpl(IUserRepository userRepository, AuthenticationManager authenticationManager,
+    public UserServicesImpl(IUserRepository userRepository,
                             PasswordEncoder passwordEncoder, SecurityConfiguration securityConfiguration) {
         this.userRepository = userRepository;
-        this.authenticationManager = authenticationManager;
         this.passwordEncoder = passwordEncoder;
         this.securityConfiguration = securityConfiguration;
     }
 
 
     @Override
-    public ResponseEntity<ResultFindAll<List<FindAllDTO>>> findAll()
+    public ResponseEntity<ResponseStatusDTO<List<FindAllDTO>>> findAll()
             throws UserServiceLogicException {
         try {
 
@@ -57,7 +54,7 @@ public class UserServicesImpl implements IUserServices {
                     .map(user -> new FindAllDTO(user.getEmail(), user.getCreatedAccount()))
                     .collect(Collectors.toList());
 
-            var response = new ResultFindAll<>(ResponseStatus.SUCCESS.name(), userDto);
+            var response = new ResponseStatusDTO<>(ResponseStatus.SUCCESS.name(), userDto);
 
             return ResponseEntity
                     .status(HttpStatus.OK)
@@ -86,7 +83,7 @@ public class UserServicesImpl implements IUserServices {
     }
 
     @Override
-    public ResponseEntity<Result<?>> updateEmailUser(String email, GeneralRequestDTO data) {
+    public ResponseEntity<Result<?>> updateEmailUser(String email, UpdateRequestDTO data) {
         try {
             var user = userRepository.findByEmail(email);
             if (user.getEmail() == null)

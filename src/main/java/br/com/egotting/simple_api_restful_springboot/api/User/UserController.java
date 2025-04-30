@@ -1,18 +1,14 @@
 package br.com.egotting.simple_api_restful_springboot.api.User;
 
 import br.com.egotting.simple_api_restful_springboot.Pattern.ResultPattern.Result;
-import br.com.egotting.simple_api_restful_springboot.api.Routes.Routes;
+import br.com.egotting.simple_api_restful_springboot.domain.Entities.User.Dto.FindAllDTO;
 import br.com.egotting.simple_api_restful_springboot.domain.Entities.User.Dto.FindEmailDTO;
-import br.com.egotting.simple_api_restful_springboot.domain.Services.User.Interface.IUserServices;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
+import br.com.egotting.simple_api_restful_springboot.domain.Services.User.UserServicesImpl;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.egotting.simple_api_restful_springboot.domain.Entities.GeneralDTOs.GeneralReponseDTO;
-import br.com.egotting.simple_api_restful_springboot.domain.Entities.GeneralDTOs.GeneralRequestDTO;
-import br.com.egotting.simple_api_restful_springboot.domain.Entities.User.Dto.DeleteRequestDTO;
-import br.com.egotting.simple_api_restful_springboot.domain.Entities.User.Dto.UserResponseDTO;
+import br.com.egotting.simple_api_restful_springboot.domain.Entities.ResponseStatusDTOs.ResponseStatusDTO;
+import br.com.egotting.simple_api_restful_springboot.domain.Entities.User.Dto.UpdateRequestDTO;
 
 import java.util.List;
 
@@ -24,32 +20,33 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 
-import static br.com.egotting.simple_api_restful_springboot.api.Routes.Routes.MAIN_ENDPOINTS;
-
 
 @RestController
-@RequestMapping(MAIN_ENDPOINTS)
+@RequestMapping("/api/v1/user")
 public class UserController {
-    @Autowired
-    IUserServices userServices;
+    private final UserServicesImpl userServices;
 
-    @GetMapping("/get/users")
-    public ResponseEntity<GeneralReponseDTO<List<UserResponseDTO>>> GetAllUsers() {
+    public UserController(UserServicesImpl userServices) {
+        this.userServices = userServices;
+    }
+
+    @GetMapping("/listar")
+    public ResponseEntity<ResponseStatusDTO<List<FindAllDTO>>> GetAllUsers() {
         return userServices.findAll();
     }
 
-    @GetMapping("/get/user/{email}")
-    public ResponseEntity<Result<?>> GetUniqueUser(@PathVariable @Validated FindEmailDTO data) {
-        return userServices.findEmail(data);
+    @GetMapping("/encontrar/{email}")
+    public ResponseEntity<Result<?>> GetUniqueUser(@PathVariable String email, FindEmailDTO data) {
+        return userServices.findEmail(email, data);
     }
 
-    @PutMapping("/update/user")
-    public ResponseEntity<Result<?>> updateUser(@RequestBody @Validated GeneralRequestDTO data) {
-        return userServices.updateEmailUser(data);
+    @PutMapping("/atualizar/{email}")
+    public ResponseEntity<Result<?>> updateUser(@PathVariable String email, @RequestBody @Validated UpdateRequestDTO data) {
+        return userServices.updateEmailUser(email, data);
     }
 
-    @DeleteMapping("/delete/user")
-    ResponseEntity<Result<?>> DeleteUser(@RequestBody @Validated DeleteRequestDTO data) {
-        return userServices.deleteUser(data);
+    @DeleteMapping("/deletar/{email}")
+    ResponseEntity<Result<?>> DeleteUser(@PathVariable String email) {
+        return userServices.deleteUser(email);
     }
 }
