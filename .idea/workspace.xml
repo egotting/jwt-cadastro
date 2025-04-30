@@ -85,37 +85,37 @@
     <option name="showMembers" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Application.SimpleApiRestfulSpringbootApplication.executor": "Run",
-    "JUnit.AuthServiceTest.testCadastroUser.executor": "Run",
-    "JUnit.AuthServiceTest.testCadastroUserWithNullEmail.executor": "Run",
-    "JUnit.AuthServiceTest.testLoginUser.executor": "Run",
-    "JUnit.UserServiceTest.testFindAll.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Administrator/Documents/repo/github.com/egotting/simple-api-restful-springboot",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Application.SimpleApiRestfulSpringbootApplication.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthServiceTest.testCadastroUser.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthServiceTest.testCadastroUserWithNullEmail.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthServiceTest.testLoginUser.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTest.testFindAll.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Administrator/Documents/repo/github.com/egotting/simple-api-restful-springboot&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Administrator\Documents\repo\github.com\egotting\simple-api-restful-springboot\src\main\resources\jwt" />
@@ -127,7 +127,7 @@
       <recent name="br.com.egotting.simple_api_restful_springboot.domain.Entities.User.Dto" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SimpleApiRestfulSpringbootApplication">
+  <component name="RunManager" selected="Spring Boot.SimpleApiRestfulSpringbootApplication">
     <configuration name="SimpleApiRestfulSpringbootApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.egotting.simple_api_restful_springboot.SimpleApiRestfulSpringbootApplication" />
       <module name="simple-api-restful-springboot" />
