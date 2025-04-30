@@ -1,0 +1,716 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4e364db1-65db-4947-bd62-b764d5b7d111" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Record" />
+        <option value="Class" />
+        <option value="Interface" />
+        <option value="com.intellij.jpb.FlywayMigrationScript" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="feature/refatorando" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;egotting&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/egotting/apirestful-simples-springboot.git&quot;,
+    &quot;accountId&quot;: &quot;ef7c7cea-c118-445e-aa4c-a21cab838111&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$PROJECT_DIR$/../../../../../../../Program Files/Zulu/zulu-21/lib/src.zip!/java.base/java/io/WinNTFileSystem.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$PROJECT_DIR$/../../../../../../../Program Files/Zulu/zulu-21/lib/src.zip!/java.base/java/util/ResourceBundle.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/6.4.4/spring-security-core-6.4.4-sources.jar!/org/springframework/security/authentication/UsernamePasswordAuthenticationToken.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/6.2.5/spring-core-6.2.5.jar!/org/springframework/util/StringUtils.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/6.2.5/spring-web-6.2.5-sources.jar!/org/springframework/http/ResponseEntity.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/6.2.5/spring-web-6.2.5-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Services/Auth/AuthServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="JvmLoggingSettingsStorage">
+    <option name="loggerId" value="Slf4j" />
+  </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="jdkForImporter" value="21" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2vDfmrox7BXVlJDPCk8PoUYrYLE" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Application.SimpleApiRestfulSpringbootApplication.executor": "Run",
+    "JUnit.AuthServiceTest.testCadastroUser.executor": "Run",
+    "JUnit.AuthServiceTest.testCadastroUserWithNullEmail.executor": "Run",
+    "JUnit.AuthServiceTest.testLoginUser.executor": "Run",
+    "JUnit.UserServiceTest.testFindAll.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "develop",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Administrator/Documents/repo/github.com/egotting/simple-api-restful-springboot",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Documents\repo\github.com\egotting\simple-api-restful-springboot\src\main\resources\jwt" />
+      <recent name="C:\Users\Administrator\Documents\repo\github.com\egotting\simple-api-restful-springboot\src\main\resources" />
+      <recent name="\\wsl.localhost\arch\home\ego\Documents\repo\github.com\egotting\simple-api-restful-springboot" />
+      <recent name="\\wsl.localhost\arch\home\ego\Documents\repo\github.com\egotting\simple-api-restful-springboot\src\main" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="br.com.egotting.simple_api_restful_springboot.domain.Entities.User.Dto" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.SimpleApiRestfulSpringbootApplication">
+    <configuration name="SimpleApiRestfulSpringbootApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.egotting.simple_api_restful_springboot.SimpleApiRestfulSpringbootApplication" />
+      <module name="simple-api-restful-springboot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.egotting.simple_api_restful_springboot.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthServiceTest.testCadastroUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="simple-api-restful-springboot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.egotting.simple_api_restful_springboot.Services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.egotting.simple_api_restful_springboot.Services" />
+      <option name="MAIN_CLASS_NAME" value="br.com.egotting.simple_api_restful_springboot.Services.AuthServiceTest" />
+      <option name="METHOD_NAME" value="testCadastroUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthServiceTest.testCadastroUserWithNullEmail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="simple-api-restful-springboot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.egotting.simple_api_restful_springboot.Services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.egotting.simple_api_restful_springboot.Services" />
+      <option name="MAIN_CLASS_NAME" value="br.com.egotting.simple_api_restful_springboot.Services.AuthServiceTest" />
+      <option name="METHOD_NAME" value="testCadastroUserWithNullEmail" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthServiceTest.testLoginUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="simple-api-restful-springboot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.egotting.simple_api_restful_springboot.Services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.egotting.simple_api_restful_springboot.Services" />
+      <option name="MAIN_CLASS_NAME" value="br.com.egotting.simple_api_restful_springboot.Services.AuthServiceTest" />
+      <option name="METHOD_NAME" value="testLoginUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest.testFindAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="simple-api-restful-springboot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.egotting.simple_api_restful_springboot.Services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.egotting.simple_api_restful_springboot.Services" />
+      <option name="MAIN_CLASS_NAME" value="br.com.egotting.simple_api_restful_springboot.Services.UserServiceTest" />
+      <option name="METHOD_NAME" value="testFindAll" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SimpleApiRestfulSpringbootApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="simple-api-restful-springboot" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="br.com.egotting.simple_api_restful_springboot.SimpleApiRestfulSpringbootApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.AuthServiceTest.testLoginUser" />
+        <item itemvalue="Application.SimpleApiRestfulSpringbootApplication" />
+        <item itemvalue="JUnit.UserServiceTest.testFindAll" />
+        <item itemvalue="JUnit.AuthServiceTest.testCadastroUser" />
+        <item itemvalue="JUnit.AuthServiceTest.testCadastroUserWithNullEmail" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.23774.435" />
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-IU-251.23774.435" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4e364db1-65db-4947-bd62-b764d5b7d111" name="Changes" comment="" />
+      <created>1743684728147</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1743684728147</updated>
+      <workItem from="1745803361079" duration="219000" />
+      <workItem from="1745803971567" duration="249000" />
+      <workItem from="1745845123801" duration="4571000" />
+      <workItem from="1745854199774" duration="47000" />
+      <workItem from="1745854519251" duration="14873000" />
+      <workItem from="1745931618894" duration="9000" />
+      <workItem from="1745937165917" duration="24463000" />
+      <workItem from="1746018553964" duration="384000" />
+      <workItem from="1746018962111" duration="30339000" />
+    </task>
+    <task id="LOCAL-00008" summary=".">
+      <option name="closed" value="true" />
+      <created>1745867759510</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1745867759510</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Fix: Trocando o tipo para record">
+      <option name="closed" value="true" />
+      <created>1745867813467</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1745867813467</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Fix: removendo service AuthService">
+      <option name="closed" value="true" />
+      <created>1745867908737</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1745867908737</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Refactor: Refatorando o AuthService">
+      <option name="closed" value="true" />
+      <created>1745868076748</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1745868076748</updated>
+    </task>
+    <task id="LOCAL-00012" summary=".">
+      <option name="closed" value="true" />
+      <created>1745868412034</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1745868412034</updated>
+    </task>
+    <task id="LOCAL-00013" summary="feat: Implementaçao dto para criaçao de usuario">
+      <option name="closed" value="true" />
+      <created>1745868461246</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1745868461246</updated>
+    </task>
+    <task id="LOCAL-00014" summary="feat: Implementaçao do ServerError">
+      <option name="closed" value="true" />
+      <created>1745868488633</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1745868488633</updated>
+    </task>
+    <task id="LOCAL-00015" summary=".">
+      <option name="closed" value="true" />
+      <created>1745868507296</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1745868507296</updated>
+    </task>
+    <task id="LOCAL-00016" summary="feat: Implementaçao dto para o findEmail">
+      <option name="closed" value="true" />
+      <created>1745868528723</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1745868528723</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Refactor: Deixando menos poluido">
+      <option name="closed" value="true" />
+      <created>1745868578890</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1745868578890</updated>
+    </task>
+    <task id="LOCAL-00018" summary="feat: Implementaçao do JWT">
+      <option name="closed" value="true" />
+      <created>1745868603515</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1745868603515</updated>
+    </task>
+    <task id="LOCAL-00019" summary=".">
+      <option name="closed" value="true" />
+      <created>1745868622485</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1745868622485</updated>
+    </task>
+    <task id="LOCAL-00020" summary="feat: Implementaçao da entidade das roles e aplicando design pattern Builder">
+      <option name="closed" value="true" />
+      <created>1745868664256</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1745868664257</updated>
+    </task>
+    <task id="LOCAL-00021" summary="feat: Fazendo presets das rotas">
+      <option name="closed" value="true" />
+      <created>1745868679576</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1745868679576</updated>
+    </task>
+    <task id="LOCAL-00022" summary=".">
+      <option name="closed" value="true" />
+      <created>1745868688004</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1745868688004</updated>
+    </task>
+    <task id="LOCAL-00023" summary="feat: Implementaçao do SpringSecurity">
+      <option name="closed" value="true" />
+      <created>1745868712945</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1745868712945</updated>
+    </task>
+    <task id="LOCAL-00024" summary=".">
+      <option name="closed" value="true" />
+      <created>1745868720659</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1745868720660</updated>
+    </task>
+    <task id="LOCAL-00025" summary=".">
+      <option name="closed" value="true" />
+      <created>1745868734710</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1745868734710</updated>
+    </task>
+    <task id="LOCAL-00026" summary="feat: Implementando design pattern Builder e refatorando para deixar melhor visualmente">
+      <option name="closed" value="true" />
+      <created>1745868801354</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1745868801354</updated>
+    </task>
+    <task id="LOCAL-00027" summary="feat: Implementaçao do Filter">
+      <option name="closed" value="true" />
+      <created>1745868832535</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1745868832535</updated>
+    </task>
+    <task id="LOCAL-00028" summary="feat: Implementanddo UserDetails">
+      <option name="closed" value="true" />
+      <created>1745868856552</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1745868856552</updated>
+    </task>
+    <task id="LOCAL-00029" summary="feat: Implementanddo UserDetailsService">
+      <option name="closed" value="true" />
+      <created>1745868876940</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1745868876940</updated>
+    </task>
+    <task id="LOCAL-00030" summary=".">
+      <option name="closed" value="true" />
+      <created>1745868892891</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1745868892891</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Refactor: Refatorando para utilizar o builder">
+      <option name="closed" value="true" />
+      <created>1745869122073</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1745869122073</updated>
+    </task>
+    <task id="LOCAL-00032" summary=".">
+      <option name="closed" value="true" />
+      <created>1745869134524</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1745869134524</updated>
+    </task>
+    <task id="LOCAL-00033" summary="feat: Criando nova tabela">
+      <option name="closed" value="true" />
+      <created>1745869151851</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1745869151851</updated>
+    </task>
+    <task id="LOCAL-00034" summary=".">
+      <option name="closed" value="true" />
+      <created>1745869160910</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1745869160910</updated>
+    </task>
+    <task id="LOCAL-00035" summary=".">
+      <option name="closed" value="true" />
+      <created>1745869383056</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1745869383056</updated>
+    </task>
+    <task id="LOCAL-00036" summary=".">
+      <option name="closed" value="true" />
+      <created>1746047782482</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1746047782482</updated>
+    </task>
+    <task id="LOCAL-00037" summary=".">
+      <option name="closed" value="true" />
+      <created>1746048052055</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1746048052055</updated>
+    </task>
+    <task id="LOCAL-00038" summary=".">
+      <option name="closed" value="true" />
+      <created>1746048143555</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1746048143555</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Refactor: Refatorando as injeçao de dependencias e implementano para o usuario ser sempre cargo COMMON">
+      <option name="closed" value="true" />
+      <created>1746048271150</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1746048271150</updated>
+    </task>
+    <task id="LOCAL-00040" summary=".">
+      <option name="closed" value="true" />
+      <created>1746048296337</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1746048296337</updated>
+    </task>
+    <task id="LOCAL-00041" summary=".">
+      <option name="closed" value="true" />
+      <created>1746048304416</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1746048304416</updated>
+    </task>
+    <task id="LOCAL-00042" summary="feat: implementando um novo error">
+      <option name="closed" value="true" />
+      <created>1746049073911</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1746049073911</updated>
+    </task>
+    <task id="LOCAL-00043" summary="feat: implementando um novo error">
+      <option name="closed" value="true" />
+      <created>1746049691233</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1746049691233</updated>
+    </task>
+    <task id="LOCAL-00044" summary=".">
+      <option name="closed" value="true" />
+      <created>1746049708667</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1746049708667</updated>
+    </task>
+    <task id="LOCAL-00045" summary=".">
+      <option name="closed" value="true" />
+      <created>1746049949637</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1746049949637</updated>
+    </task>
+    <task id="LOCAL-00046" summary="feat: Implementando Repository da entidade Role">
+      <option name="closed" value="true" />
+      <created>1746049973197</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1746049973197</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Refactor: Trocando a implementaçao do tempo de criaçao de token">
+      <option name="closed" value="true" />
+      <created>1746050055366</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1746050055366</updated>
+    </task>
+    <task id="LOCAL-00048" summary=".">
+      <option name="closed" value="true" />
+      <created>1746050070877</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1746050070877</updated>
+    </task>
+    <task id="LOCAL-00049" summary=".">
+      <option name="closed" value="true" />
+      <created>1746050080453</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1746050080453</updated>
+    </task>
+    <task id="LOCAL-00050" summary="refactor: Refatorando o ResponseStatusDTO">
+      <option name="closed" value="true" />
+      <created>1746050109889</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1746050109890</updated>
+    </task>
+    <task id="LOCAL-00051" summary="refactor: trocanddo o nome da tabela de tb_roles para roles">
+      <option name="closed" value="true" />
+      <created>1746050141620</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1746050141620</updated>
+    </task>
+    <task id="LOCAL-00052" summary="refactor: implementando o filterBefore e aplicando as autenticaçoes">
+      <option name="closed" value="true" />
+      <created>1746050253559</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1746050253559</updated>
+    </task>
+    <task id="LOCAL-00053" summary="feat: implementando ddto para atualizar usuarios">
+      <option name="closed" value="true" />
+      <created>1746050275270</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1746050275270</updated>
+    </task>
+    <task id="LOCAL-00054" summary="refactor: alterando a interaçao da roles de ManyToMany para ManyToTone e alterando id ded sequence para identify">
+      <option name="closed" value="true" />
+      <created>1746050354537</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1746050354537</updated>
+    </task>
+    <task id="LOCAL-00055" summary="refactor: alterando a forma de implementaçao">
+      <option name="closed" value="true" />
+      <created>1746050387992</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1746050387992</updated>
+    </task>
+    <task id="LOCAL-00056" summary="refactor: refatorandoa forma de encontrar o tipo de role do usuario">
+      <option name="closed" value="true" />
+      <created>1746050417202</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1746050417202</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-core" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.security:spring-security-core" />
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.pub" />
+    <option featureType="dependencySupport" implementationName="java:jakarta.validation:jakarta.validation-api" />
+    <option featureType="dependencySupport" implementationName="executable:kubectl" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.data:spring-data-commons" />
+    <option featureType="dependencySupport" implementationName="java:org.hibernate.validator:hibernate-validator" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-webmvc" />
+    <option featureType="dependencySupport" implementationName="java:org.projectlombok:lombok" />
+    <option featureType="dependencySupport" implementationName="executable:docker" />
+    <option featureType="dependencySupport" implementationName="java:jakarta.persistence:jakarta.persistence-api" />
+    <option featureType="dependencySupport" implementationName="java:org.flywaydb:flyway-core" />
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.key" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: Implementaçao do ServerError" />
+    <MESSAGE value="feat: Implementaçao dto para o findEmail" />
+    <MESSAGE value="Refactor: Deixando menos poluido" />
+    <MESSAGE value="feat: Implementaçao do JWT" />
+    <MESSAGE value="feat: Implementaçao da entidade das roles e aplicando design pattern Builder" />
+    <MESSAGE value="feat: Fazendo presets das rotas" />
+    <MESSAGE value="feat: Implementaçao do SpringSecurity" />
+    <MESSAGE value="feat: Implementando design pattern Builder e refatorando para deixar melhor visualmente" />
+    <MESSAGE value="feat: Implementaçao do Filter" />
+    <MESSAGE value="feat: Implementanddo UserDetails" />
+    <MESSAGE value="feat: Implementanddo UserDetailsService" />
+    <MESSAGE value="Refactor: Refatorando para utilizar o builder" />
+    <MESSAGE value="feat: Criando nova tabela" />
+    <MESSAGE value="Refactor: Refatorando as injeçao de dependencias e implementano para o usuario ser sempre cargo COMMON" />
+    <MESSAGE value="feat: implementando um novo error" />
+    <MESSAGE value="feat: Implementando Repository da entidade Role" />
+    <MESSAGE value="Refactor: Trocando a implementaçao do tempo de criaçao de token" />
+    <MESSAGE value="." />
+    <MESSAGE value="refactor: Refatorando o ResponseStatusDTO" />
+    <MESSAGE value="refactor: trocanddo o nome da tabela de tb_roles para roles" />
+    <MESSAGE value="refactor: implementando o filterBefore e aplicando as autenticaçoes" />
+    <MESSAGE value="feat: implementando ddto para atualizar usuarios" />
+    <MESSAGE value="refactor: alterando a interaçao da roles de ManyToMany para ManyToTone e alterando id ded sequence para identify" />
+    <MESSAGE value="refactor: alterando a forma de implementaçao" />
+    <MESSAGE value="refactor: refatorandoa forma de encontrar o tipo de role do usuario" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: refatorandoa forma de encontrar o tipo de role do usuario" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="e" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
