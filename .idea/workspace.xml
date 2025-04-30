@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e364db1-65db-4947-bd62-b764d5b7d111" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f03f199f-16e3-4496-ad70-68615b7ef954.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f03f199f-16e3-4496-ad70-68615b7ef954.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +131,7 @@
       <recent name="br.com.egotting.simple_api_restful_springboot.domain.Entities.User.Dto" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.SimpleApiRestfulSpringbootApplication">
+  <component name="RunManager" selected="Application.SimpleApiRestfulSpringbootApplication">
     <configuration name="SimpleApiRestfulSpringbootApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.egotting.simple_api_restful_springboot.SimpleApiRestfulSpringbootApplication" />
       <module name="simple-api-restful-springboot" />
@@ -207,6 +208,15 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2" />
     </configuration>
     <configuration name="SimpleApiRestfulSpringbootApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="simple-api-restful-springboot" />
