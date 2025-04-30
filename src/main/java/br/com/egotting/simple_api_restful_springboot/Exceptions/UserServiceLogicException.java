@@ -5,8 +5,5 @@ public class UserServiceLogicException extends RuntimeException {
         super(message);
     }
 
-    public UserServiceLogicException(String message, Throwable cause) {
-        super(message, cause);
-    }
 
 }

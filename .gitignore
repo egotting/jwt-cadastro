@@ -6,12 +6,14 @@
 # Compiled class file
 *.class
 
+/jwt
+*.pub
+*.key
 # Log file
 *.log
 
 # BlueJ files
 *.ctxt
-
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
@@ -467,3 +469,10 @@ $RECYCLE.BIN/
 
 debug.log
 debug.log
+/src/main/resources/*
+
+# Mas NÃO ignora o arquivo de exemplo
+!/src/main/resources/application.properties.example
+
+# (Opcional) Não ignora a pasta em si
+!/src/main/resources/

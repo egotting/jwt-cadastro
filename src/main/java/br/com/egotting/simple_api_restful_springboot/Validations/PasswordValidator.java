@@ -22,5 +22,4 @@ public class PasswordValidator implements ConstraintValidator<IPasswordValidator
         }
         return pattern.matcher(password).matches();
     }
-
 }
