@@ -6,12 +6,14 @@
 # Compiled class file
 *.class
 
+/jwt
+*.pub
+*.key
 # Log file
 *.log
 
 # BlueJ files
 *.ctxt
-
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
@@ -23,7 +25,7 @@
 *.zip
 *.tar.gz
 *.rar
-
+*.env
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
@@ -412,7 +414,7 @@ ASALocalRun/
 healthchecksdb
 
 # DB FOLDER
-resources/*
+
 
 # Backup folder for Package Reference Convert tool in Visual Studio 2017
 MigrationBackup/
@@ -465,3 +467,12 @@ $RECYCLE.BIN/
 
 # Custom rules (everything added below won't be overriden by 'Generate .gitignore File' if you use 'Update' option)
 
+debug.log
+debug.log
+/src/main/resources/*
+
+# Mas NÃO ignora o arquivo de exemplo
+!/src/main/resources/application.properties.example
+
+# (Opcional) Não ignora a pasta em si
+!/src/main/resources/

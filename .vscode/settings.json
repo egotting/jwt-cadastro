@@ -11,5 +11,20 @@
       "username": "ego"
     }
   ],
-  "java.configuration.updateBuildConfiguration": "interactive"
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "files.autoSave": "onFocusChange",
+  "editor.fontFamily": "'JetBrainsMono',HackNerdFont,'IosevkaTerm Nerd Font',Consolas, 'Courier New', monospace",
+  "editor.cursorStyle": "line",
+  "animations.Active": "Scale",
+  "animations.CursorAnimation": false,
+  "animations.Default-Duration": 50,
+  "animations.Scrolling": "None",
+  "animations.CursorAnimationOptions": {
+    "TrailLength": 2
+  },
+  "editor.formatOnSave": true,
+  "editor.renderLineHighlight": "line",
+  "editor.renderWhitespace": "boundary",
+  "editor.mouseWheelZoom": true,
+  "postman.settings.dotenv-detection-notification-visibility": false
 }
