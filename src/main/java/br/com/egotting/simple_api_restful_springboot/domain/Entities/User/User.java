@@ -4,7 +4,6 @@ import java.time.LocalDateTime;
 import java.util.*;
 
 import br.com.egotting.simple_api_restful_springboot.domain.Entities.Role.Role;
-import br.com.egotting.simple_api_restful_springboot.domain.Enums.NameRoles;
 import jakarta.persistence.*;
 
 import br.com.egotting.simple_api_restful_springboot.Validations.Interface.IPasswordValidator;
@@ -13,10 +12,10 @@ import jakarta.validation.constraints.Size;
 
 
 @Entity
-@Table(name = "tb_users")
+@Table(name = "users")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
     private Long id;
     @Email
@@ -26,12 +25,9 @@ public class User {
     @IPasswordValidator
     @Column(name = "user_password")
     private String password;
-    @Column(name = "user_roles")
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
-    @JoinTable(name = "tb_users_tb_role",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "role_id"))
-    private List<Role> roles;
+    @ManyToOne
+    @JoinColumn(name = "role_user", referencedColumnName = "name_roles")
+    private Role roles;
     @Column(name = "user_created_account")
     private final LocalDateTime createdAccount = LocalDateTime.now();
 
@@ -41,10 +37,7 @@ public class User {
     public User(builder builder) {
         this.email = builder.email;
         this.password = builder.password;
-        this.roles = new ArrayList<>();
-
-        Role defaultRole = new Role.builder().roles(NameRoles.valueOf("USER")).build();
-        this.roles.add(defaultRole);
+        this.roles = builder.roles;
     }
 
 
@@ -60,9 +53,6 @@ public class User {
         return Objects.hash(id, email, password, roles, createdAccount);
     }
 
-    public List<Role> getRoles() {
-        return roles;
-    }
 
     public String getEmail() {
         return email;
@@ -80,14 +70,21 @@ public class User {
         return password;
     }
 
+    public Role getRoles() {
+        return roles;
+    }
+
     public LocalDateTime getCreatedAccount() {
         return createdAccount;
     }
 
+
+    // Builder pattern
     public static class builder {
 
         private String email;
         private String password;
+        private Role roles;
 
         public builder email(String email) {
             this.email = email;
@@ -99,6 +96,10 @@ public class User {
             return this;
         }
 
+        public builder role(Role role) {
+            this.roles = role;
+            return this;
+        }
 
         public User build() {
             return new User(this);
