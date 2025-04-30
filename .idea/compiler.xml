@@ -4,8 +4,5 @@
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="simple-api-restful-springboot" target="21" />
-    </bytecodeTargetLevel>
   </component>
 </project>
