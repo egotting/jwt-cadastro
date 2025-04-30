@@ -1,7 +1,0 @@
-CREATE TABLE IF NOT EXISTS tb_users (
-    user_id SERIAL PRIMARY KEY NOT NULL,
-    user_email VARCHAR(255) NOT NULL,
-    user_password VARCHAR(50) NOT NULL,
-    user_roles VARCHAR(255) NOT NULL,
-    user_created_account TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
-);

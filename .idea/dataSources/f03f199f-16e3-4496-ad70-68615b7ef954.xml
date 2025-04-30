@@ -3,15 +3,7 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.53">
     <root id="1">
       <DateStyle>mdy</DateStyle>
-      <Grants>1||-9223372036854775808|c|G
-1||10|c|G
-1||10|C|G
-1||10|T|G
-4||-9223372036854775808|c|G
-4||10|c|G
-4||10|C|G
-4||10|T|G
-16468||-9223372036854775808|c|G
+      <Grants>16468||-9223372036854775808|c|G
 16468||10|c|G
 16468||16470|c|G
 16468||10|C|G
@@ -19,9 +11,9 @@
 16468||-9223372036854775808|T|G
 16468||10|T|G
 16468||16470|T|G</Grants>
-      <IntrospectionStateNumber>865</IntrospectionStateNumber>
+      <IntrospectionStateNumber>910</IntrospectionStateNumber>
       <ServerVersion>17.4</ServerVersion>
-      <StartupTime>1745843203</StartupTime>
+      <StartupTime>1746016347</StartupTime>
       <TimeZones>true ACDT
 true ACSST
 false ACST
@@ -829,7 +821,7 @@ false Zulu
 14751||10|C|G
 14751||-9223372036854775808|U|G
 14751||10|U|G</Grants>
-      <IntrospectionStateNumber>865</IntrospectionStateNumber>
+      <IntrospectionStateNumber>910</IntrospectionStateNumber>
       <ObjectId>16390</ObjectId>
       <OwnerName>ego</OwnerName>
     </database>
@@ -4266,8 +4258,8 @@ false Zulu
     <schema id="270" parent="5" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>865</IntrospectionStateNumber>
-      <LastIntrospectionLocalTimestamp>2025-04-28.18:40:30</LastIntrospectionLocalTimestamp>
+      <IntrospectionStateNumber>910</IntrospectionStateNumber>
+      <LastIntrospectionLocalTimestamp>2025-04-30.20:36:02</LastIntrospectionLocalTimestamp>
       <ObjectId>2200</ObjectId>
       <StateNumber>532</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
@@ -4284,7 +4276,7 @@ false Zulu
       <ObjectId>16633</ObjectId>
       <SequenceIdentity>1</SequenceIdentity>
       <StartValue>1</StartValue>
-      <StateNumber>859</StateNumber>
+      <StateNumber>909</StateNumber>
       <StoredType>integer|0s</StoredType>
       <OwnerName>ego</OwnerName>
     </sequence>
@@ -4294,15 +4286,15 @@ false Zulu
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>ego</OwnerName>
     </table>
-    <table id="274" parent="270" name="tb_role">
+    <table id="274" parent="270" name="roles">
       <ObjectId>16644</ObjectId>
-      <StateNumber>863</StateNumber>
+      <StateNumber>881</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>ego</OwnerName>
     </table>
-    <table id="275" parent="270" name="tb_users">
+    <table id="275" parent="270" name="users">
       <ObjectId>16634</ObjectId>
-      <StateNumber>859</StateNumber>
+      <StateNumber>891</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>ego</OwnerName>
     </table>
@@ -4413,7 +4405,6 @@ false Zulu
     </column>
     <index id="291" parent="274" name="tb_role_pkey">
       <ColNames>role_id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
       <ObjectId>16648</ObjectId>
       <Primary>1</Primary>
       <StateNumber>863</StateNumber>
@@ -4421,7 +4412,6 @@ false Zulu
       <AccessMethodId>403</AccessMethodId>
     </index>
     <key id="292" parent="274" name="tb_role_pkey">
-      <NameSurrogate>1</NameSurrogate>
       <ObjectId>16649</ObjectId>
       <Primary>1</Primary>
       <StateNumber>863</StateNumber>
@@ -4446,18 +4436,11 @@ false Zulu
     <column id="295" parent="275" name="user_password">
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StateNumber>859</StateNumber>
-      <StoredType>varchar(50)|0s</StoredType>
-      <TypeId>1043</TypeId>
-    </column>
-    <column id="296" parent="275" name="user_roles">
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-      <StateNumber>859</StateNumber>
+      <StateNumber>871</StateNumber>
       <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="297" parent="275" name="user_created_account">
+    <column id="296" parent="275" name="user_created_account">
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>5</Position>
@@ -4465,9 +4448,14 @@ false Zulu
       <StoredType>timestamp|0s</StoredType>
       <TypeId>1114</TypeId>
     </column>
+    <column id="297" parent="275" name="role_user">
+      <Position>6</Position>
+      <StateNumber>891</StateNumber>
+      <StoredType>varchar(255)|0s</StoredType>
+      <TypeId>1043</TypeId>
+    </column>
     <index id="298" parent="275" name="tb_users_pkey">
       <ColNames>user_id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
       <ObjectId>16641</ObjectId>
       <Primary>1</Primary>
       <StateNumber>859</StateNumber>
@@ -4475,7 +4463,6 @@ false Zulu
       <AccessMethodId>403</AccessMethodId>
     </index>
     <key id="299" parent="275" name="tb_users_pkey">
-      <NameSurrogate>1</NameSurrogate>
       <ObjectId>16642</ObjectId>
       <Primary>1</Primary>
       <StateNumber>859</StateNumber>

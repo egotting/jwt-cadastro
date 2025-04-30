@@ -10,7 +10,7 @@ public class CreateUserRequestDTO {
     @Email
     @NotBlank(message = "Email precisa ser preenchido")
     private String email;
-    @IPasswordValidator
+    @IPasswordValidator(message = "Senha precisa ter no mínimo 8 caracteres, uma letra, um número e um caractere especial")
     @NotBlank(message = "Senha precisa ser preenchida")
     private String password;
     @IPasswordValidator(message = "Precisa ser igual a senha passada")
