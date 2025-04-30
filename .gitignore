@@ -14,7 +14,6 @@
 
 # BlueJ files
 *.ctxt
-
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
@@ -470,7 +469,10 @@ $RECYCLE.BIN/
 
 debug.log
 debug.log
-/src/main/resources/jwt/app.key
-/target/classes/jwt/app.key
-/src/main/resources/jwt/app.pub
-/target/classes/jwt/app.pub
+/src/main/resources/*
+
+# Mas NÃO ignora o arquivo de exemplo
+!/src/main/resources/application.properties.example
+
+# (Opcional) Não ignora a pasta em si
+!/src/main/resources/
