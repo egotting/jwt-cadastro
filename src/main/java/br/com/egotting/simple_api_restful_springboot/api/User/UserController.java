@@ -4,6 +4,7 @@ import br.com.egotting.simple_api_restful_springboot.Pattern.ResultPattern.Resul
 import br.com.egotting.simple_api_restful_springboot.domain.Entities.User.Dto.FindAllDTO;
 import br.com.egotting.simple_api_restful_springboot.domain.Entities.User.Dto.FindEmailDTO;
 import br.com.egotting.simple_api_restful_springboot.domain.Services.User.UserServicesImpl;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,7 +31,9 @@ public class UserController {
         this.userServices = userServices;
     }
 
+
     @GetMapping("/listar")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<ResponseStatusDTO<List<FindAllDTO>>> GetAllUsers() {
         return userServices.findAll();
     }
@@ -46,6 +49,7 @@ public class UserController {
     }
 
     @DeleteMapping("/deletar/{email}")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     ResponseEntity<Result<?>> DeleteUser(@PathVariable String email) {
         return userServices.deleteUser(email);
     }
