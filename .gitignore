@@ -476,3 +476,4 @@ debug.log
 
 # (Opcional) Não ignora a pasta em si
 !/src/main/resources/
+/target/classes/application.properties
