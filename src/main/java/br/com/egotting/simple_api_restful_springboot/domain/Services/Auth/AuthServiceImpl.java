@@ -16,12 +16,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 
 @Service
@@ -30,15 +25,13 @@ public class AuthServiceImpl implements IAuthService {
 
     private final IUserRepository userRepository;
     private final IRoleRepository roleRepository;
-    private final AuthenticationManager authenticationManager;
     private final JwtTokenService jwtTokenService;
     private final SecurityConfiguration securityConfiguration;
 
-    public AuthServiceImpl(IUserRepository userRepository, IRoleRepository roleRepository, AuthenticationManager authenticationManager,
+    public AuthServiceImpl(IUserRepository userRepository, IRoleRepository roleRepository,
                            JwtTokenService jwtTokenService, SecurityConfiguration securityConfiguration) {
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
-        this.authenticationManager = authenticationManager;
         this.jwtTokenService = jwtTokenService;
         this.securityConfiguration = securityConfiguration;
     }
@@ -47,12 +40,14 @@ public class AuthServiceImpl implements IAuthService {
     public ResponseEntity<Result<?>> login(AuthRequestDTO data) {
 
         try {
-            UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken =
-                    new UsernamePasswordAuthenticationToken(data.email(), data.password());
-            Authentication authentication = authenticationManager.authenticate(usernamePasswordAuthenticationToken);
-            UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
+            var user = userRepository.findByEmail(data.email());
+            if (!user.getEmail().equals(data.email())) {
+                return ResponseEntity
+                        .status(HttpStatus.BAD_REQUEST)
+                        .body(Result.Failure(Error.Validation("User.Not.Equal", "Usuario nao cadastrado nao é igual ao usuario passado")));
+            }
+            UserDetailsImpl userDetails = new UserDetailsImpl(user);
             jwtTokenService.GenerateToken(userDetails);
-
             return ResponseEntity
                     .status(HttpStatus.OK)
                     .body(Result.Success(Error.Success("Usuario.Logado", "Usuario Logado com Sucesso")));
@@ -69,7 +64,6 @@ public class AuthServiceImpl implements IAuthService {
         try {
             var findRole = roleRepository.findByNameRoles(NameRoles.COMMON).orElseThrow(() ->
                     new RuntimeException("Role not found"));
-
             if (userRepository.existsByEmail(data.email())) {
                 return ResponseEntity
                         .status(HttpStatus.BAD_REQUEST)
