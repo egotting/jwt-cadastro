@@ -4,9 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e364db1-65db-4947-bd62-b764d5b7d111" name="Changes" comment="">
+    <list default="true" id="4e364db1-65db-4947-bd62-b764d5b7d111" name="Changes" comment=".">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/api/User/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/api/User/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/api/User/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/api/User/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Security/authentication/JwtTokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Security/authentication/JwtTokenService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Security/authentication/UserAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Security/authentication/UserAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Security/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Security/config/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Services/Auth/AuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Services/Auth/AuthServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app.key" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app.key" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app.pub" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app.pub" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,9 +27,9 @@
       <list>
         <option value="Enum" />
         <option value="Record" />
-        <option value="Class" />
         <option value="Interface" />
         <option value="com.intellij.jpb.FlywayMigrationScript" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -48,9 +57,11 @@
     <setting file="jar://$PROJECT_DIR$/../../../../../../../Program Files/Zulu/zulu-21/lib/src.zip!/java.base/java/io/WinNTFileSystem.java" root0="SKIP_INSPECTION" />
     <setting file="jar://$PROJECT_DIR$/../../../../../../../Program Files/Zulu/zulu-21/lib/src.zip!/java.base/java/util/ResourceBundle.java" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/6.4.4/spring-security-core-6.4.4-sources.jar!/org/springframework/security/authentication/UsernamePasswordAuthenticationToken.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-oauth2-core/6.4.4/spring-security-oauth2-core-6.4.4.jar!/org/springframework/security/oauth2/core/AbstractOAuth2Token.class" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/6.2.5/spring-core-6.2.5.jar!/org/springframework/util/StringUtils.class" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/6.2.5/spring-web-6.2.5-sources.jar!/org/springframework/http/ResponseEntity.java" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/6.2.5/spring-web-6.2.5-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Security/authentication/JwtTokenService.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Services/Auth/AuthServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="JvmLoggingSettingsStorage">
@@ -83,7 +94,9 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
     <option name="showVisibilityIcons" value="true" />
@@ -91,14 +104,16 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Application.SimpleApiRestfulSpringbootApplication.executor": "Run",
+    "Application.SimpleApiRestfulSpringbootApplication.executor": "Debug",
     "JUnit.AuthServiceTest.testCadastroUser.executor": "Run",
     "JUnit.AuthServiceTest.testCadastroUserWithNullEmail.executor": "Run",
     "JUnit.AuthServiceTest.testLoginUser.executor": "Run",
     "JUnit.UserServiceTest.testFindAll.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "full.screen.before.presentation.mode": "false",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Administrator/Documents/repo/github.com/egotting/simple-api-restful-springboot",
@@ -111,7 +126,7 @@
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -209,15 +224,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
-      <method v="2" />
-    </configuration>
     <configuration name="SimpleApiRestfulSpringbootApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="simple-api-restful-springboot" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="br.com.egotting.simple_api_restful_springboot.SimpleApiRestfulSpringbootApplication" />
@@ -227,9 +233,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AuthServiceTest.testLoginUser" />
         <item itemvalue="Application.SimpleApiRestfulSpringbootApplication" />
         <item itemvalue="JUnit.UserServiceTest.testFindAll" />
+        <item itemvalue="JUnit.AuthServiceTest.testLoginUser" />
         <item itemvalue="JUnit.AuthServiceTest.testCadastroUser" />
         <item itemvalue="JUnit.AuthServiceTest.testCadastroUserWithNullEmail" />
       </list>
@@ -260,14 +266,19 @@
       <workItem from="1745937165917" duration="24463000" />
       <workItem from="1746018553964" duration="384000" />
       <workItem from="1746018962111" duration="30339000" />
-    </task>
-    <task id="LOCAL-00008" summary=".">
-      <option name="closed" value="true" />
-      <created>1745867759510</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1745867759510</updated>
+      <workItem from="1746052630975" duration="509000" />
+      <workItem from="1746195329275" duration="118000" />
+      <workItem from="1746387897788" duration="226000" />
+      <workItem from="1746388137987" duration="28000" />
+      <workItem from="1746388178165" duration="352000" />
+      <workItem from="1746388550745" duration="218000" />
+      <workItem from="1746388787736" duration="3295000" />
+      <workItem from="1746449157873" duration="4942000" />
+      <workItem from="1746459064928" duration="189000" />
+      <workItem from="1746459266448" duration="22000" />
+      <workItem from="1746459304247" duration="146000" />
+      <workItem from="1746459468059" duration="22000" />
+      <workItem from="1746459503899" duration="14488000" />
     </task>
     <task id="LOCAL-00009" summary="Fix: Trocando o tipo para record">
       <option name="closed" value="true" />
@@ -653,7 +664,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746050417202</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary=".">
+      <option name="closed" value="true" />
+      <created>1746053099988</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1746053099988</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -704,7 +723,6 @@
     <MESSAGE value="feat: implementando um novo error" />
     <MESSAGE value="feat: Implementando Repository da entidade Role" />
     <MESSAGE value="Refactor: Trocando a implementaçao do tempo de criaçao de token" />
-    <MESSAGE value="." />
     <MESSAGE value="refactor: Refatorando o ResponseStatusDTO" />
     <MESSAGE value="refactor: trocanddo o nome da tabela de tb_roles para roles" />
     <MESSAGE value="refactor: implementando o filterBefore e aplicando as autenticaçoes" />
@@ -712,7 +730,11 @@
     <MESSAGE value="refactor: alterando a interaçao da roles de ManyToMany para ManyToTone e alterando id ded sequence para identify" />
     <MESSAGE value="refactor: alterando a forma de implementaçao" />
     <MESSAGE value="refactor: refatorandoa forma de encontrar o tipo de role do usuario" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: refatorandoa forma de encontrar o tipo de role do usuario" />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
+  </component>
+  <component name="VgoProject">
+    <settings-migrated>true</settings-migrated>
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
