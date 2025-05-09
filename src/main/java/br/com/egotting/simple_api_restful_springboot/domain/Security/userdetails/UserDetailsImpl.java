@@ -20,7 +20,7 @@ public class UserDetailsImpl implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        if (user.getRoles().getNameRoles() == NameRoles.ADMIN)
+        if (user.getRoles().getNameRoles().name().equals(NameRoles.ADMIN.name()))
             return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_COMMON"));
         else
             return List.of(new SimpleGrantedAuthority("ROLE_COMMON"));

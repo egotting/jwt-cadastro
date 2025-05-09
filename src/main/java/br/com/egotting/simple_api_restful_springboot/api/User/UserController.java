@@ -33,7 +33,6 @@ public class UserController {
 
 
     @GetMapping("/listar")
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<ResponseStatusDTO<List<FindAllDTO>>> GetAllUsers() {
         return userServices.findAll();
     }
@@ -49,7 +48,6 @@ public class UserController {
     }
 
     @DeleteMapping("/deletar/{email}")
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
     ResponseEntity<Result<?>> DeleteUser(@PathVariable String email) {
         return userServices.deleteUser(email);
     }

@@ -5,15 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e364db1-65db-4947-bd62-b764d5b7d111" name="Changes" comment=".">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Security/config/FilterUserSecurity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/api/User/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/api/User/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/api/User/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/api/User/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Entities/ResponseStatusDTOs/ResponseStatusDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Entities/ResponseStatusDTOs/ResponseStatusDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Repositories/User/IUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Repositories/User/IUserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Security/authentication/JwtTokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Security/authentication/JwtTokenService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Security/authentication/UserAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Security/authentication/UserAuthenticationFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Security/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Security/config/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Services/Auth/AuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Services/Auth/AuthServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Security/userdetails/UserDetailsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Security/userdetails/UserDetailsImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Security/userdetails/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Security/userdetails/UserDetailsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Services/User/UserServicesImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Services/User/UserServicesImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/app.key" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app.key" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/app.pub" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app.pub" afterDir="false" />
     </list>
@@ -56,6 +59,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$PROJECT_DIR$/../../../../../../../Program Files/Zulu/zulu-21/lib/src.zip!/java.base/java/io/WinNTFileSystem.java" root0="SKIP_INSPECTION" />
     <setting file="jar://$PROJECT_DIR$/../../../../../../../Program Files/Zulu/zulu-21/lib/src.zip!/java.base/java/util/ResourceBundle.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/10.1.39/tomcat-embed-core-10.1.39.jar!/jakarta/servlet/FilterChain.class" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/6.4.4/spring-security-core-6.4.4-sources.jar!/org/springframework/security/authentication/UsernamePasswordAuthenticationToken.java" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-oauth2-core/6.4.4/spring-security-oauth2-core-6.4.4.jar!/org/springframework/security/oauth2/core/AbstractOAuth2Token.class" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/6.2.5/spring-core-6.2.5.jar!/org/springframework/util/StringUtils.class" root0="SKIP_INSPECTION" />
@@ -114,7 +118,7 @@
     "RunOnceActivity.go.migrated.go.modules.settings": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "full.screen.before.presentation.mode": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "bugfix/oauth2-nao-idenfica-as-roles",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Administrator/Documents/repo/github.com/egotting/simple-api-restful-springboot",
     "node.js.detected.package.eslint": "true",
@@ -126,7 +130,7 @@
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.keymap",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -244,8 +248,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.23774.435" />
-        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-IU-251.23774.435" />
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.109" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.109" />
       </set>
     </attachedChunks>
   </component>
@@ -278,95 +282,15 @@
       <workItem from="1746459266448" duration="22000" />
       <workItem from="1746459304247" duration="146000" />
       <workItem from="1746459468059" duration="22000" />
-      <workItem from="1746459503899" duration="14488000" />
-    </task>
-    <task id="LOCAL-00009" summary="Fix: Trocando o tipo para record">
-      <option name="closed" value="true" />
-      <created>1745867813467</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1745867813467</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Fix: removendo service AuthService">
-      <option name="closed" value="true" />
-      <created>1745867908737</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1745867908737</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Refactor: Refatorando o AuthService">
-      <option name="closed" value="true" />
-      <created>1745868076748</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1745868076748</updated>
-    </task>
-    <task id="LOCAL-00012" summary=".">
-      <option name="closed" value="true" />
-      <created>1745868412034</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1745868412034</updated>
-    </task>
-    <task id="LOCAL-00013" summary="feat: Implementaçao dto para criaçao de usuario">
-      <option name="closed" value="true" />
-      <created>1745868461246</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1745868461246</updated>
-    </task>
-    <task id="LOCAL-00014" summary="feat: Implementaçao do ServerError">
-      <option name="closed" value="true" />
-      <created>1745868488633</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1745868488633</updated>
-    </task>
-    <task id="LOCAL-00015" summary=".">
-      <option name="closed" value="true" />
-      <created>1745868507296</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1745868507296</updated>
-    </task>
-    <task id="LOCAL-00016" summary="feat: Implementaçao dto para o findEmail">
-      <option name="closed" value="true" />
-      <created>1745868528723</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1745868528723</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Refactor: Deixando menos poluido">
-      <option name="closed" value="true" />
-      <created>1745868578890</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1745868578890</updated>
-    </task>
-    <task id="LOCAL-00018" summary="feat: Implementaçao do JWT">
-      <option name="closed" value="true" />
-      <created>1745868603515</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1745868603515</updated>
-    </task>
-    <task id="LOCAL-00019" summary=".">
-      <option name="closed" value="true" />
-      <created>1745868622485</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1745868622485</updated>
+      <workItem from="1746459503899" duration="15090000" />
+      <workItem from="1746484720921" duration="3000" />
+      <workItem from="1746539464820" duration="6172000" />
+      <workItem from="1746568055672" duration="12235000" />
+      <workItem from="1746622202857" duration="2375000" />
+      <workItem from="1746625805059" duration="11352000" />
+      <workItem from="1746710212245" duration="170000" />
+      <workItem from="1746710575102" duration="3060000" />
+      <workItem from="1746796180613" duration="9104000" />
     </task>
     <task id="LOCAL-00020" summary="feat: Implementaçao da entidade das roles e aplicando design pattern Builder">
       <option name="closed" value="true" />
@@ -672,7 +596,95 @@
       <option name="project" value="LOCAL" />
       <updated>1746053099988</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary=".">
+      <option name="closed" value="true" />
+      <created>1746478705878</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1746478705878</updated>
+    </task>
+    <task id="LOCAL-00059" summary="fix: Esqueci de colocar o ! no if">
+      <option name="closed" value="true" />
+      <created>1746478764648</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1746478764648</updated>
+    </task>
+    <task id="LOCAL-00060" summary=".">
+      <option name="closed" value="true" />
+      <created>1746478778299</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1746478778299</updated>
+    </task>
+    <task id="LOCAL-00061" summary="refactor: Refatorei o token service">
+      <option name="closed" value="true" />
+      <created>1746478806448</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1746478806448</updated>
+    </task>
+    <task id="LOCAL-00062" summary="feat: Implementaçao de jwtEncoder e Decoder e oauth2">
+      <option name="closed" value="true" />
+      <created>1746478850166</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1746478850166</updated>
+    </task>
+    <task id="LOCAL-00063" summary="fix: remoçao de filter">
+      <option name="closed" value="true" />
+      <created>1746478870068</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1746478870068</updated>
+    </task>
+    <task id="LOCAL-00064" summary="feat: utilizando tag preAuthorize">
+      <option name="closed" value="true" />
+      <created>1746478892628</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1746478892628</updated>
+    </task>
+    <task id="LOCAL-00065" summary="feat: utilizando tag preAuthorize">
+      <option name="closed" value="true" />
+      <created>1746478903841</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1746478903841</updated>
+    </task>
+    <task id="LOCAL-00066" summary="feat: exemplo que deve ser seguido">
+      <option name="closed" value="true" />
+      <created>1746478984403</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1746478984403</updated>
+    </task>
+    <task id="LOCAL-00067" summary=".">
+      <option name="closed" value="true" />
+      <created>1746478997184</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1746478997184</updated>
+    </task>
+    <task id="LOCAL-00068" summary=".">
+      <option name="closed" value="true" />
+      <created>1746809465414</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1746809465414</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -706,12 +718,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: Implementaçao do ServerError" />
-    <MESSAGE value="feat: Implementaçao dto para o findEmail" />
-    <MESSAGE value="Refactor: Deixando menos poluido" />
-    <MESSAGE value="feat: Implementaçao do JWT" />
-    <MESSAGE value="feat: Implementaçao da entidade das roles e aplicando design pattern Builder" />
-    <MESSAGE value="feat: Fazendo presets das rotas" />
     <MESSAGE value="feat: Implementaçao do SpringSecurity" />
     <MESSAGE value="feat: Implementando design pattern Builder e refatorando para deixar melhor visualmente" />
     <MESSAGE value="feat: Implementaçao do Filter" />
@@ -730,6 +736,12 @@
     <MESSAGE value="refactor: alterando a interaçao da roles de ManyToMany para ManyToTone e alterando id ded sequence para identify" />
     <MESSAGE value="refactor: alterando a forma de implementaçao" />
     <MESSAGE value="refactor: refatorandoa forma de encontrar o tipo de role do usuario" />
+    <MESSAGE value="fix: Esqueci de colocar o ! no if" />
+    <MESSAGE value="refactor: Refatorei o token service" />
+    <MESSAGE value="feat: Implementaçao de jwtEncoder e Decoder e oauth2" />
+    <MESSAGE value="fix: remoçao de filter" />
+    <MESSAGE value="feat: utilizando tag preAuthorize" />
+    <MESSAGE value="feat: exemplo que deve ser seguido" />
     <MESSAGE value="." />
     <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>

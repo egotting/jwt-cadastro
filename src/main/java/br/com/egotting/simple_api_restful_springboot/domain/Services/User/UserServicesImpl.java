@@ -30,14 +30,14 @@ public class UserServicesImpl implements IUserServices {
     private static final Logger log = LoggerFactory.getLogger(UserServicesImpl.class);
 
 
-    private final IUserRepository userRepository;
+    private final IUserRepository repository;
 
     private final PasswordEncoder passwordEncoder;
     private final SecurityConfiguration securityConfiguration;
 
     public UserServicesImpl(IUserRepository userRepository,
                             PasswordEncoder passwordEncoder, SecurityConfiguration securityConfiguration) {
-        this.userRepository = userRepository;
+        this.repository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.securityConfiguration = securityConfiguration;
     }
@@ -48,14 +48,13 @@ public class UserServicesImpl implements IUserServices {
             throws UserServiceLogicException {
         try {
 
-            var users = userRepository.findAll();
+            var users = repository.findAll();
 
             var userDto = users.stream()
                     .map(user -> new FindAllDTO(user.getEmail(), user.getCreatedAccount()))
                     .collect(Collectors.toList());
 
             var response = new ResponseStatusDTO<>(ResponseStatus.SUCCESS.name(), userDto);
-
             return ResponseEntity
                     .status(HttpStatus.OK)
                     .body(response);
@@ -68,7 +67,7 @@ public class UserServicesImpl implements IUserServices {
     @Override
     public ResponseEntity<Result<?>> findEmail(String email, FindEmailDTO data) {
         try {
-            var user = userRepository.findByEmail(email);
+            var user = repository.findByEmail(email);
             return ResponseEntity
                     .status(HttpStatus.OK)
                     .body(Result.Success(Success("Usuario.Encontrado",
@@ -85,7 +84,7 @@ public class UserServicesImpl implements IUserServices {
     @Override
     public ResponseEntity<Result<?>> updateEmailUser(String email, UpdateRequestDTO data) {
         try {
-            var user = userRepository.findByEmail(email);
+            var user = repository.findByEmail(email);
             if (user.getEmail() == null)
                 return ResponseEntity
                         .status(HttpStatus.NOT_FOUND)
@@ -103,7 +102,7 @@ public class UserServicesImpl implements IUserServices {
                 user.setPassword(securityConfiguration.passwordEncoder().encode(data.getNewPassword()));
 
 
-            userRepository.save(user);
+            repository.save(user);
             return ResponseEntity
                     .status(HttpStatus.OK)
                     .body(Result.Success(Success("Usuario.Atualizaddo",
@@ -119,14 +118,14 @@ public class UserServicesImpl implements IUserServices {
     @Override
     public ResponseEntity<Result<?>> deleteUser(String email) {
         try {
-            var user = userRepository.findByEmail(email);
+            var user = repository.findByEmail(email);
             if (user == null) {
                 return ResponseEntity
                         .status(HttpStatus.NOT_FOUND)
                         .body(Result.Failure(NotFound("Usuario.NaoEncontrado", "Usuario não encontrado")));
             }
 
-            userRepository.deleteByEmail(user.getEmail());
+            repository.deleteByEmail(user.getEmail());
             return ResponseEntity
                     .status(HttpStatus.OK)
                     .body(Result.Success(Success("Usuario.deletado", "Usuario Deletado com Sucesso")));

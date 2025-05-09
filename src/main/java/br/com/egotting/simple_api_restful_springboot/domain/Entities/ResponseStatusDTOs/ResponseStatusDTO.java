@@ -11,4 +11,19 @@ public class ResponseStatusDTO<T> {
         this.response = response;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public T getResponse() {
+        return response;
+    }
+
+    public void setResponse(T response) {
+        this.response = response;
+    }
 }
