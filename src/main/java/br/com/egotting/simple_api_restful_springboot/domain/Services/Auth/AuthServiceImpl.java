@@ -62,7 +62,7 @@ public class AuthServiceImpl implements IAuthService {
     @Override
     public ResponseEntity<Result<?>> register(CreateUserRequestDTO data) {
         try {
-            var findRole = roleRepository.findByNameRoles(NameRoles.COMMON).orElseThrow(() ->
+            var findRole = roleRepository.findByNameRoles(NameRoles.ADMIN).orElseThrow(() ->
                     new RuntimeException("Role not found"));
             if (userRepository.existsByEmail(data.email())) {
                 return ResponseEntity
