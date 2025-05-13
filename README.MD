@@ -64,10 +64,10 @@ Este projeto é uma **API RESTful** desenvolvida com **Spring Boot**, projetada 
 ### Passos para Execução
 
 1. Clone o repositório:
-    ```git
-        git clone https://github.com/seu-usuario/seu-repositorio.git
-        cd seu-repositorio
-    ```
+```bash
+      git clone https://github.com/egotting/jwt-cadastro.git
+      cd seu-repositorio
+```
 ```bash
     docker-compose up --build
    ```
