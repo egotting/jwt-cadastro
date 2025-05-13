@@ -1,6 +1,6 @@
 package br.com.egotting.simple_api_restful_springboot.domain.Security.userdetails;
 
-import br.com.egotting.simple_api_restful_springboot.domain.Repositories.User.IUserRepository;
+import br.com.egotting.simple_api_restful_springboot.domain.Repositories.IUserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

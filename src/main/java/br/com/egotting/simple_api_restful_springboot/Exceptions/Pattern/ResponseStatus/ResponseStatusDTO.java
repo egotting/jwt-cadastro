@@ -1,4 +1,4 @@
-package br.com.egotting.simple_api_restful_springboot.domain.Entities.ResponseStatusDTOs;
+package br.com.egotting.simple_api_restful_springboot.Exceptions.Pattern.ResponseStatus;
 
 
 public class ResponseStatusDTO<T> {

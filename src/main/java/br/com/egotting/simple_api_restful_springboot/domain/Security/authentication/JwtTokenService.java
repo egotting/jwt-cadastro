@@ -1,18 +1,14 @@
 package br.com.egotting.simple_api_restful_springboot.domain.Security.authentication;
 
-import br.com.egotting.simple_api_restful_springboot.Pattern.ResultPattern.Error;
-import br.com.egotting.simple_api_restful_springboot.Pattern.ResultPattern.Result;
+import br.com.egotting.simple_api_restful_springboot.Exceptions.Pattern.ResultPattern.Error;
+import br.com.egotting.simple_api_restful_springboot.Exceptions.Pattern.ResultPattern.Result;
 import br.com.egotting.simple_api_restful_springboot.domain.Security.userdetails.UserDetailsImpl;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Service;
 
 import java.time.*;
-import java.util.stream.Collectors;
 
 
 @Service
@@ -22,7 +18,7 @@ public class JwtTokenService {
     private String key;
 
     public String GenerateToken(UserDetailsImpl user) {
-        if (user != null) {
+        if (user == null) {
             new Result<>(Result.Failure(Error.Failure("User.Invalid", "Usuario invalido")));
         }
 

@@ -1,4 +1,4 @@
-package br.com.egotting.simple_api_restful_springboot.Pattern.ResultPattern;
+package br.com.egotting.simple_api_restful_springboot.Exceptions.Pattern.ResultPattern;
 
 
 public class Result<T> {

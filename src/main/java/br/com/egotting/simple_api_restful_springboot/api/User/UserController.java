@@ -1,14 +1,13 @@
 package br.com.egotting.simple_api_restful_springboot.api.User;
 
-import br.com.egotting.simple_api_restful_springboot.Pattern.ResultPattern.Result;
+import br.com.egotting.simple_api_restful_springboot.Exceptions.Pattern.ResultPattern.Result;
 import br.com.egotting.simple_api_restful_springboot.domain.Entities.User.Dto.FindAllDTO;
 import br.com.egotting.simple_api_restful_springboot.domain.Entities.User.Dto.FindEmailDTO;
 import br.com.egotting.simple_api_restful_springboot.domain.Services.User.UserServicesImpl;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.egotting.simple_api_restful_springboot.domain.Entities.ResponseStatusDTOs.ResponseStatusDTO;
+import br.com.egotting.simple_api_restful_springboot.Exceptions.Pattern.ResponseStatus.ResponseStatusDTO;
 import br.com.egotting.simple_api_restful_springboot.domain.Entities.User.Dto.UpdateRequestDTO;
 
 import java.util.List;

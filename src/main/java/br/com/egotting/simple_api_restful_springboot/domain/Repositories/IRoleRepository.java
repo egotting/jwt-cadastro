@@ -1,4 +1,4 @@
-package br.com.egotting.simple_api_restful_springboot.domain.Repositories.Role;
+package br.com.egotting.simple_api_restful_springboot.domain.Repositories;
 
 import br.com.egotting.simple_api_restful_springboot.domain.Entities.Role.Role;
 import br.com.egotting.simple_api_restful_springboot.domain.Enums.NameRoles;
