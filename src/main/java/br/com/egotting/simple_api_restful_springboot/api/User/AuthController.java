@@ -1,6 +1,6 @@
 package br.com.egotting.simple_api_restful_springboot.api.User;
 
-import br.com.egotting.simple_api_restful_springboot.Pattern.ResultPattern.Result;
+import br.com.egotting.simple_api_restful_springboot.Exceptions.Pattern.ResultPattern.Result;
 import br.com.egotting.simple_api_restful_springboot.domain.Entities.User.Dto.CreateUserRequestDTO;
 import br.com.egotting.simple_api_restful_springboot.domain.Services.Auth.AuthServiceImpl;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,13 +1,13 @@
 package br.com.egotting.simple_api_restful_springboot.domain.Services.Auth;
 
-import br.com.egotting.simple_api_restful_springboot.Pattern.ResultPattern.Error;
-import br.com.egotting.simple_api_restful_springboot.Pattern.ResultPattern.Result;
+import br.com.egotting.simple_api_restful_springboot.Exceptions.Pattern.ResultPattern.Error;
+import br.com.egotting.simple_api_restful_springboot.Exceptions.Pattern.ResultPattern.Result;
 import br.com.egotting.simple_api_restful_springboot.domain.Entities.Auth.Dto.AuthRequestDTO;
 import br.com.egotting.simple_api_restful_springboot.domain.Entities.User.Dto.CreateUserRequestDTO;
 import br.com.egotting.simple_api_restful_springboot.domain.Entities.User.User;
 import br.com.egotting.simple_api_restful_springboot.domain.Enums.NameRoles;
-import br.com.egotting.simple_api_restful_springboot.domain.Repositories.Role.IRoleRepository;
-import br.com.egotting.simple_api_restful_springboot.domain.Repositories.User.IUserRepository;
+import br.com.egotting.simple_api_restful_springboot.domain.Repositories.IRoleRepository;
+import br.com.egotting.simple_api_restful_springboot.domain.Repositories.IUserRepository;
 import br.com.egotting.simple_api_restful_springboot.domain.Security.authentication.JwtTokenService;
 import br.com.egotting.simple_api_restful_springboot.domain.Security.config.SecurityConfiguration;
 import br.com.egotting.simple_api_restful_springboot.domain.Security.userdetails.UserDetailsImpl;
@@ -86,6 +86,5 @@ public class AuthServiceImpl implements IAuthService {
                     .status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body(Result.Failure(Error.ServerError("Server.Error", "Erro no Servidor")));
         }
-
     }
 }
