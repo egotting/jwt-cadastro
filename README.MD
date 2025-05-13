@@ -1,4 +1,5 @@
-```markdown
+
+
 # API RESTful Simples com Spring Boot
 
 ## 📖 Visão Geral
@@ -35,6 +36,7 @@ Este projeto é uma **API RESTful** desenvolvida com **Spring Boot**, projetada 
 - **Singleton**: Para gerenciar instâncias únicas de componentes.
 - **Factory Method**: Para criação de objetos de forma flexível.
 - **Result Pattern**: Para encapsular resultados e erros de forma consistente.
+- **Builder Pattern**: Para construção de objetos complexos de forma fluida.
 ---
 
 ## 📂 Estrutura do Projeto
@@ -53,50 +55,65 @@ Este projeto é uma **API RESTful** desenvolvida com **Spring Boot**, projetada 
 2. **Java 21+** instalado.
 3. **Maven** configurado no ambiente.
 
+## 🐳 Executando com Docker
+
+### Pré-requisitos
+
+1. **Docker** e **Docker Compose** instalados no ambiente.
+
 ### Passos para Execução
 
 1. Clone o repositório:
-   ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
-   cd seu-repositorio
+    ```git
+        git clone https://github.com/seu-usuario/seu-repositorio.git
+        cd seu-repositorio
+    ```
+```bash
+    docker-compose up --build
    ```
+   Acesse a API em: http://localhost:8080.
+
+
+   **Para parar os containers:**
+```bash
+    docker-compose down
+```
+
 
 2. Configure o banco de dados no arquivo `application.properties`:
-   ```properties
+```properties
    spring.datasource.url=jdbc:postgresql://localhost:5432/seu_banco
    spring.datasource.username=seu_usuario
    spring.datasource.password=sua_senha
-   ```
+  ```
 
-3. Execute o projeto:
+   3. Execute o projeto:
    ```bash
-   mvn spring-boot:run
-   ```
+         mvn spring-boot:run
+  ```
 
 4. Acesse a API em: [http://localhost:8080](http://localhost:8080).
 
----
+   ---
 
-## 📦 Como Importar
+   ## 📦 Como Importar
 
-1. Abra sua IDE (IntelliJ IDEA ou outra de sua preferência).
-2. Selecione a opção **Import Project**.
-3. Escolha o arquivo `pom.xml` na raiz do projeto.
-4. Aguarde o Maven resolver as dependências.
-5. Execute a aplicação diretamente pela IDE.
+   1. Abra sua IDE (IntelliJ IDEA ou outra de sua preferência).
+   2. Selecione a opção **Import Project**.
+   3. Escolha o arquivo `pom.xml` na raiz do projeto.
+   4. Aguarde o Maven resolver as dependências.
+   5. Execute a aplicação diretamente pela IDE.
 
----
+   ---
 
-## 📌 Próximos Passos
+   ## 📌 Próximos Passos
 
-- 🔒 **Melhorias no Sistema de Autenticação e Autorização**.
-- 🧪 **Implementação de Testes Automatizados**.
-- 📜 **Documentação da API com Swagger**.
-- ⚡ **Otimizações de Desempenho e Escalabilidade**.
+   - 🔒 **Melhorias no Sistema de Autenticação e Autorização**.
+     - 🧪 **Implementação de Testes Automatizados**.
+     - ⚡ **Otimizações de Desempenho e Escalabilidade**.
+   ---
 
----
+   ## 🛡️ Contribuição
 
-## 🛡️ Contribuição
-
-Desenvolvido com ❤️ por Henrique --> [Github](https://github.com/egotting).
+   Desenvolvido com ❤️ por Henrique --> [Github](https://github.com/egotting).
 ```
