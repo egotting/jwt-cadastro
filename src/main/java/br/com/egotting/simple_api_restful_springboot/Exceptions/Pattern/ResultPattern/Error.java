@@ -1,6 +1,6 @@
-package br.com.egotting.simple_api_restful_springboot.Pattern.ResultPattern;
+package br.com.egotting.simple_api_restful_springboot.Exceptions.Pattern.ResultPattern;
 
-import br.com.egotting.simple_api_restful_springboot.Pattern.ResultPattern.Enum.ErrorTypes;
+import br.com.egotting.simple_api_restful_springboot.Exceptions.Pattern.ResultPattern.Enum.ErrorTypes;
 
 
 public class Error {

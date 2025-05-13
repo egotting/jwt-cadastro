@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DeveloperToolsToolWindowSettingsV1" lastSelectedContentNodeId="jwt-encoder-decoder" pluginVersion="7.0.0">
+    <developerToolsConfigurations>
+      <developerToolConfiguration developerToolId="jwt-encoder-decoder" id="871393d3-0975-4f29-9cff-d0d25352393b" name="Workbench">
+        <properties>
+          <property key="headerText" type="INPUT" value="kotlin.String|{&#13;&#10;  &quot;alg&quot;: &quot;HS256&quot;,&#13;&#10;  &quot;typ&quot;: &quot;JWT&quot;&#13;&#10;}" />
+          <property key="payloadText" type="INPUT" value="kotlin.String|{&#13;&#10;  &quot;iss&quot;: &quot;simple-api-restul-springboot&quot;,&#13;&#10;  &quot;sub&quot;: &quot;user.admin@dev.com&quot;,&#13;&#10;  &quot;exp&quot;: 1746816683&#13;&#10;}" />
+          <property key="encodedText" type="INPUT" value="kotlin.String|eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzaW1wbGUtYXBpLXJlc3R1bC1zcHJpbmdib290Iiwic3ViIjoidXNlci5hZG1pbkBkZXYuY29tIiwiZXhwIjoxNzQ2ODE2NjgzfQ.qqW74PxicLgk_E-6u6Y6E4MwgtC7_vlfVo8-1B64P4o" />
+        </properties>
+      </developerToolConfiguration>
+      <developerToolConfiguration developerToolId="base64-encoder-decoder" id="32af0df2-559d-4de3-816e-8faedcabeec6" name="Workbench">
+        <properties>
+          <property key="sourceText" type="INPUT" value="kotlin.String|eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzaW1wbGUtYXBpLXJlc3R1bC1zcHJpbmdib290Iiwic3ViIjoidXNlci5hZG1pbkBkZXYuY29tIiwiZXhwIjoxNzQ2NTkwMzk4LCJpYXQiOjE3NDY1NzU5OTgsImF1dGhvcml0aWVzIjoiUk9MRV9BRE1JTixST0xFX0NPTU1PTiJ9.qhvmgS3D3Y5K6tYs5LZSNMPT8Tb5C8edb6Ownh0SnwHmw1FVs0dx3bJQh2NMZXI1ZdwwjcukkJNxUnyUsQ3UliylcoxXT3Xscq51JOSamCYWi0TCZJJ7iFQkJosEfTv1qphHGSByYH8LZ6SZMUd0ee8y4gVl4lJbqurqwn6aCzaXojMPMPiSjMRx3zoYOjfkeNMBPLUaq1UYmVnjW2knePimg_tBvFEw4roWUrDGIteQyJ2qJ7PiPA82uEa794VIcRiv4yzcuO06Aq-cYCv9O4iCNsSR03RclshuXNRU2jDp0xVfpsDsJYqiyd4jRe6C9lH6jUku6QEbVCOzFb-G1A" />
+          <property key="targetText" type="INPUT" value="kotlin.String|ZXlKaGJHY2lPaUpTVXpJMU5pSjkuZXlKcGMzTWlPaUp6YVcxd2JHVXRZWEJwTFhKbGMzUjFiQzF6Y0hKcGJtZGliMjkwSWl3aWMzVmlJam9pZFhObGNpNWhaRzFwYmtCa1pYWXVZMjl0SWl3aVpYaHdJam94TnpRMk5Ua3dNems0TENKcFlYUWlPakUzTkRZMU56VTVPVGdzSW1GMWRHaHZjbWwwYVdWeklqb2lVazlNUlY5QlJFMUpUaXhTVDB4RlgwTlBUVTFQVGlKOS5xaHZtZ1MzRDNZNUs2dFlzNUxaU05NUFQ4VGI1QzhlZGI2T3duaDBTbndIbXcxRlZzMGR4M2JKUWgyTk1aWEkxWmR3d2pjdWtrSk54VW55VXNRM1VsaXlsY294WFQzWHNjcTUxSk9TYW1DWVdpMFRDWkpKN2lGUWtKb3NFZlR2MXFwaEhHU0J5WUg4TFo2U1pNVWQwZWU4eTRnVmw0bEpicXVycXduNmFDemFYb2pNUE1QaVNqTVJ4M3pvWU9qZmtlTk1CUExVYXExVVltVm5qVzJrbmVQaW1nX3RCdkZFdzRyb1dVckRHSXRlUXlKMnFKN1BpUEE4MnVFYTc5NFZJY1JpdjR5emN1TzA2QXEtY1lDdjlPNGlDTnNTUjAzUmNsc2h1WE5SVTJqRHAweFZmcHNEc0pZcWl5ZDRqUmU2QzlsSDZqVWt1NlFFYlZDT3pGYi1HMUE=" />
+        </properties>
+      </developerToolConfiguration>
+    </developerToolsConfigurations>
+    <expandedGroupNodeIds />
+  </component>
+</project>

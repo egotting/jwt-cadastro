@@ -1,0 +1,43 @@
+services:
+  db:
+    image: postgres
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+    networks:
+      - backend
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: nome-da-database
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/nome-da-database
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: root
+      SPRING.JPA_HIBERNATE_DDL_AUTO: update
+      SPRING.DATASOURCE_DRIVER_CLASS_NAME: org.postgresql.Driver
+      SPRING_JPA_SHOW_SQL: true
+      SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT: org.hibernate.dialect.PostgreSQLDialect
+    links:
+      - db
+    depends_on:
+      - db
+    networks:
+      - backend
+    ports:
+      - "8080:8080"
+
+volumes:
+  postgres_data:
+
+networks:
+  backend:
+    driver: bridge
