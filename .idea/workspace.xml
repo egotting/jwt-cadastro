@@ -4,42 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c87a4520-317d-4b0f-b487-446fdce6f006" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/developer-tools.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example-docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/simple-api-restful-springboot.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f03f199f-16e3-4496-ad70-68615b7ef954.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f03f199f-16e3-4496-ad70-68615b7ef954.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/Pattern/ResultPattern/Enum/ErrorTypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/Exceptions/Pattern/ResultPattern/Enum/ErrorTypes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/Pattern/ResultPattern/Error.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/Exceptions/Pattern/ResultPattern/Error.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/Pattern/ResultPattern/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/Exceptions/Pattern/ResultPattern/Result.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/SimpleApiRestfulSpringbootApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/SimpleApiRestfulSpringbootApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/api/User/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/api/User/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/api/User/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/api/User/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Entities/ResponseStatusDTOs/ResponseStatusDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/Exceptions/Pattern/ResponseStatus/ResponseStatusDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Entities/User/Dto/FindAllDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Entities/User/Dto/FindAllDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Entities/User/Dto/UpdateRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Entities/User/Dto/UpdateRequestDTO.java" afterDir="false" />
+    <list default="true" id="c87a4520-317d-4b0f-b487-446fdce6f006" name="Changes" comment=".">
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Entities/User/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Entities/User/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Repositories/Role/IRoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Repositories/IRoleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Repositories/User/IUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Repositories/IUserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Security/authentication/JwtTokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Security/authentication/JwtTokenService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Security/config/FilterUserSecurity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Security/config/FilterUserSecurity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Security/userdetails/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Security/userdetails/UserDetailsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Services/Auth/AuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Services/Auth/AuthServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Services/Auth/Interface/IAuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Services/Auth/Interface/IAuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Services/User/Interface/IUserServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Services/User/Interface/IUserServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Services/User/UserServicesImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/egotting/simple_api_restful_springboot/domain/Services/User/UserServicesImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.example.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.example.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/br/com/egotting/simple_api_restful_springboot/Services/AuthServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/com/egotting/simple_api_restful_springboot/Services/AuthServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/egotting/simple_api_restful_springboot/Services/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/com/egotting/simple_api_restful_springboot/Services/UserServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/app.key" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/app.pub" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.example.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.example.properties" afterDir="false" />
@@ -230,11 +198,82 @@
       <workItem from="1746920203081" duration="214000" />
       <workItem from="1747104219765" duration="2634000" />
       <workItem from="1747141902487" duration="354000" />
-      <workItem from="1747142277361" duration="26201000" />
+      <workItem from="1747142277361" duration="26776000" />
     </task>
+    <task id="LOCAL-00001" summary="feat: adicionando o docker-compose.yml">
+      <option name="closed" value="true" />
+      <created>1747171185630</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1747171185631</updated>
+    </task>
+    <task id="LOCAL-00002" summary=".">
+      <option name="closed" value="true" />
+      <created>1747171248420</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1747171248420</updated>
+    </task>
+    <task id="LOCAL-00003" summary=".">
+      <option name="closed" value="true" />
+      <created>1747171401601</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1747171401601</updated>
+    </task>
+    <task id="LOCAL-00004" summary=".">
+      <option name="closed" value="true" />
+      <created>1747171445331</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1747171445331</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat: Inicialização do dockerfile">
+      <option name="closed" value="true" />
+      <created>1747171529289</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1747171529289</updated>
+    </task>
+    <task id="LOCAL-00006" summary=".">
+      <option name="closed" value="true" />
+      <created>1747171544558</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1747171544558</updated>
+    </task>
+    <task id="LOCAL-00007" summary=".">
+      <option name="closed" value="true" />
+      <created>1747171639034</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1747171639034</updated>
+    </task>
+    <task id="LOCAL-00008" summary=".">
+      <option name="closed" value="true" />
+      <created>1747171654145</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1747171654145</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: adicionando o docker-compose.yml" />
+    <MESSAGE value="feat: Inicialização do dockerfile" />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
 </project>
