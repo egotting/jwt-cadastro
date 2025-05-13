@@ -1,9 +1,8 @@
 package br.com.egotting.simple_api_restful_springboot.domain.Security.config;
 
-import br.com.egotting.simple_api_restful_springboot.domain.Repositories.User.IUserRepository;
+import br.com.egotting.simple_api_restful_springboot.domain.Repositories.IUserRepository;
 import br.com.egotting.simple_api_restful_springboot.domain.Security.authentication.JwtTokenService;
 import br.com.egotting.simple_api_restful_springboot.domain.Security.userdetails.UserDetailsImpl;
-import br.com.egotting.simple_api_restful_springboot.domain.Security.userdetails.UserDetailsServiceImpl;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -30,9 +29,6 @@ public class FilterUserSecurity extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         var token = recoverToken(request);
-        if (token == null)
-            throw new ServletException("Token not found");
-
         if (token != null) {
             var sub = jwtTokenService.validateToken(token);
 
